@@ -91,7 +91,7 @@ html {
 
 /* remove right margins from op keys */
 /* style dif keys */
-keys span.operator {
+.keys span.operator {
 	background: #FFF0F5;
 	margin-right: 0;
 }

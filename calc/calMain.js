@@ -81,5 +81,5 @@ for(var i = 0; i < keys.length; i++) {
 		
 		// prevent page jumps
 		e.preventDefault();
-	} 
+	}
 }
