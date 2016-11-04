@@ -13,30 +13,38 @@
 -->
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
   <!-- Whiteboard Styling -->
   <link rel="stylesheet" type="text/css" href="styles/whiteboard_style.css" />
+  <link rel="stylesheet" type="text/css" href="styles/main.css" />
+  <link rel="stylesheet" type="text/css" href="styles/video_chat.css" />
+
 </head>
 <body>
-
+<div class="page-header">
+  <img class="logo" src="images/MA_logga.png"/>
+</div>
 <!--video chat room begins-->
-<div>
-<div id="vid-box"></div>
+<div class="container-fluid">
+  <div id="vid-box">
 
-<form name="loginForm" id="login" action="#" onsubmit="return login(this);">
-    <input type="text" name="username" id="username" placeholder="Pick a username!" />
-    <input type="submit" name="login_submit" value="Log In">
-</form>
+      <form name="loginForm" id="login" action="#" onsubmit="return login(this);">
+        <input type="text" name="username" id="username" placeholder="Pick a username!" />
+        <input type="submit" name="login_submit" value="Log In">
+      </form>
 
-<form name="callForm" id="call" action="#" onsubmit="return makeCall(this);">
-  <input type="text" name="number" placeholder="Enter user to dial!" />
-  <input type="submit" value="Call"/>
-</form>
+
+    <form name="callForm" id="call" action="#" onsubmit="return makeCall(this);">
+      <input type="text" name="number" placeholder="Enter user to dial!" />
+      <input type="submit" value="Call"/>
+    </form>
+  </div>
 </div>
 <!--video chat room ends-->
-
-<div>
-<!-- Whiteboard -->
-  <section id="main">
+<div class="container-fluid">
+  <div class="whiteboard col-md-8">
+  <!-- Whiteboard -->
     <canvas id="drawCanvas" width="300" height="300">Canvas is not supported on this browser!</canvas>
 
     <section id="colorSwatch">
@@ -47,11 +55,13 @@
       <input type="radio" name="color" id="color05" data-color="firebrick"> <label for="color05"></label>  
       <input type="radio" name="color" id="color06" data-color="powderblue">  <label for="color06"></label> 
     </section>
-  </section>
+
+  </div>
+  <div class="col-md-4">
+    <iframe src="https://friendlychat-dd071.firebaseapp.com" align="right" width="500" height="500"></iframe>
+  </div>
 </div>
-<div>
-  <iframe src="https://friendlychat-dd071.firebaseapp.com" align="right" width="500" height="500"></iframe>
-</div>
+
 <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -69,6 +79,7 @@
     // For history() demo, please view history.html.
     var drawHistory = false;
 </script>
+
 <script src="scripts/main.js"></script>
 <!-- Whiteboard-->
 <script src="//cdn.pubnub.com/pubnub-3.14.1.min.js"></script>

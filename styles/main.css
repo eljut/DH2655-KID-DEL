@@ -17,6 +17,23 @@
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
 }
+
+.logo {
+  margin-left: 50px;
+  height: 70px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.page-header {
+  background-color: white;
+  margin: 0px !important;
+}
+
+input {
+  color: black !important;
+}
+
 main, #messages-card {
   height: 100%;
   padding-bottom: 0;
