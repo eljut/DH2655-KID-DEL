@@ -1,0 +1,13 @@
+.subject {
+  text-align: center;
+  font-size: 22pt;
+}
+
+.subject-image {
+	margin-left: 10%;
+	width: 80%;
+}
+
+.quiz-container {
+  padding-top: 140px;
+}
