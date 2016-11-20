@@ -1,0 +1,123 @@
+<!doctype html>
+<!--
+  Copyright 2015 Google Inc. All rights reserved.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+      https://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+  <title>Quiz</title>
+  <!-- Whiteboard Styling -->
+  <link rel="stylesheet" type="text/css" href="styles/main.css" />
+  <link rel="stylesheet" type="text/css" href="styles/online_test.css" />
+</head>
+<body>
+  <div class="nav navbar-nav navbar-fixed-top">
+    <a class="navbar-brand" href="https://myacademy.se/">
+      <img class="logo" src="images/MA_logga.png"/>
+    </a>
+    <div class="navbar-buttons">
+      <a class="nav-item nav-link active" href="index.html">Profile</a>
+      <a class="nav-item nav-link" href="#">Book a session</a>
+      <a class="nav-item nav-link" href="whiteboard.html">Classroom</a>
+      <a class="nav-item nav-link" href="quiz.html">Quiz</a>
+      <a class="nav-item nav-link" href="#">Scoreboard</a>
+    </div>
+  </div>
+	<div class="container-fluid profile">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<a class="col-md-3">
+					<a class="h-line"/>
+				</a>
+				<a id="step0" class="col-md-1 step-indicator-empty"></a>
+				<a id="step1" class="col-md-1 step-indicator-empty"></a>
+				<a id="step2" class="col-md-1 step-indicator-empty"></a>
+				<a id="step3" class="col-md-2 step-indicator-empty"></a>
+				<a id="step4" class="col-md-2 step-indicator-empty"></a>
+				<a id="step5" class="col-md-2 step-indicator-empty"></a>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+		<hr>
+		<p id="problem">Test</p>
+		<input id="answer" type="text" placeholder="Answer">
+		<hr>
+		<button class="btn btn-default" onclick="backQuestion()">
+			Back
+		</button>
+		<button id="nextBtn" class="btn btn-default" onclick="nextQuestion()">
+			Next
+		</button>
+	</div>
+	
+	<script>
+	var currentStep = 0;
+	var numSteps = 6;
+	var problem1Variants = ["Problem 1, variant 1 (Placeholder)",
+													"Problem 1, variant 2 (Placeholder)",
+													"Problem 1, variant 3 (Placeholder)"];
+	var problem2Variants = ["Problem 2, variant 1 (Placeholder)",
+													"Problem 2, variant 2 (Placeholder)",
+													"Problem 2, variant 3 (Placeholder)"];
+	var problem3Variants = ["Problem 3, variant 1 (Placeholder)",
+													"Problem 3, variant 2 (Placeholder)",
+													"Problem 3, variant 3 (Placeholder)"];
+	var problem4Variants = ["Problem 4, variant 1 (Placeholder)",
+													"Problem 4, variant 2 (Placeholder)",
+													"Problem 4, variant 3 (Placeholder)"];
+	var problem5Variants = ["Problem 5, variant 1 (Placeholder)",
+													"Problem 5, variant 2 (Placeholder)",
+													"Problem 5, variant 3 (Placeholder)"];
+	var problem6Variants = ["Problem 6, variant 1 (Placeholder)",
+													"Problem 6, variant 2 (Placeholder)",
+													"Problem 6, variant 3 (Placeholder)"];
+	var problem = [problem1Variants[Math.floor(Math.random() * problem1Variants.length)],
+								problem2Variants[Math.floor(Math.random() * 3)],
+								problem3Variants[Math.floor(Math.random() * 3)],
+								problem4Variants[Math.floor(Math.random() * 3)],
+								problem5Variants[Math.floor(Math.random() * 3)],
+								problem6Variants[Math.floor(Math.random() * 3)]];
+	document.getElementById("problem").innerHTML = problem[currentStep];
+	
+	var answer = ["","","","","",""];
+	
+	function backQuestion() {
+		if (currentStep > 0) {
+			answer[currentStep] = document.getElementById("answer").value;
+			currentStep--;
+			document.getElementById("problem").innerHTML = problem[currentStep];
+			document.getElementById("answer").value = answer[currentStep];
+			document.getElementById("step"+currentStep).style.background = "none";
+			document.getElementById("nextBtn").innerHTML = "Next";
+			document.getElementById("answer").style.visibility = "visible";
+		}
+	}
+	
+	function nextQuestion() {
+		if (currentStep < numSteps) {
+			document.getElementById("step"+currentStep).style.background = "#226699";
+			answer[currentStep] = document.getElementById("answer").value;
+			currentStep++;
+			if (currentStep == numSteps) {
+				document.getElementById("problem").innerHTML = "Congratulations! You have now completed all questions in this quiz!";
+				document.getElementById("nextBtn").innerHTML = "Finish";
+				document.getElementById("answer").style.visibility = "hidden";
+			} else {
+				document.getElementById("problem").innerHTML = problem[currentStep];
+				document.getElementById("answer").value = answer[currentStep];
+			}
+		}
+	}
+	</script>
+</body>
+</html>
