@@ -20,18 +20,20 @@
 
 </head>
 <body>
-  <div class="nav navbar-nav navbar-fixed-top">
-    <a class="navbar-brand" href="https://myacademy.se/">
-      <img class="logo" src="images/MA_logga.png"/>
-    </a>
-    <div class="navbar-buttons">
-      <a class="nav-item nav-link active" href="#">Profile</a>
-      <a class="nav-item nav-link" href="#">Book a session</a>
-      <a class="nav-item nav-link" href="whiteboard.html">Classroom</a>
-      <a class="nav-item nav-link" href="quiz.html">Quiz</a>
-      <a class="nav-item nav-link" href="#">Scoreboard</a>
-    </div>
+
+<div class="nav navbar-nav navbar-fixed-top">
+  <a class="navbar-brand" href="https://myacademy.se/">
+    <img class="logo" src="images/MA_logga.png"/>
+  </a>
+  <div class="navbar-buttons">
+    <a class="nav-item nav-link active" href="#">Profile</a>
+    <a class="nav-item nav-link" href="#">Book a session</a>
+    <a class="nav-item nav-link" href="whiteboard.html">Classroom</a>
+    <a class="nav-item nav-link" href="quiz.html">Quiz</a>
+    <a class="nav-item nav-link" href="#">Scoreboard</a>
   </div>
+</div>
+
 <div class="container-fluid profile">
   <div class="profile-title">
       Welcome Name!
@@ -54,52 +56,87 @@
   </div>
   <div class="col-md-9">
     <div id="accordion" role="tablist" aria-multiselectable="true">
-    <div class="card">
-      <div class="card-header" role="tab" id="headingOne">
-        <h5 class="mb-0">
-          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-            Your saved notes
-          </a>
-        </h5>
+      
+      <div class="card">
+        <div class="card-header" role="tab" id="headingOne">
+          <h5 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              Schedule
+            </a>
+          </h5>
+        </div>
+        <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="card-block">
+            <p><img class="note" src="images/booking.png" width="10%" height="10%" alt="medal placeholder" align="left"> <br>1 hour Math session booked - Sunday 13 October 2016 </p>
+          </div>
+        </div>
       </div>
 
-    <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
-      <div class="card-block">
-        <div class="notes">
-        <img class="note" src="images/scribble.png" alt="medal placeholder">
+      <div class="card">
+        <div class="card-header" role="tab" id="headingTwo">
+          <h5 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Homework
+            </a>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="card-block">
+            Assignment 2 - Due on Monday 14 October 2016
+          </div>
+        </div>
       </div>
+      
+      <div class="card">
+        <div class="card-header" role="tab" id="headingThree">
+          <h5 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Notes
+            </a>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="card-block">
+            <div class="notes">
+              <img class="note" src="images/scribble.png" alt="medal placeholder">
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab" id="headingTwo">
-      <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Homework
-        </a>
-      </h5>
-    </div>
-    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-      <div class="card-block">
-        blabla
+      
+      <div class="card">
+        <div class="card-header" role="tab" id="headingFour">
+          <h5 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              History
+            </a>
+          </h5>
+        </div>
+        <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+          <div class="card-block">
+              <table>
+                <tr>
+                  <th>Event</th>
+                  <th>Date Modified</th>
+                </tr>
+                <tr>
+                  <td>1 hour Math session booked</td>
+                  <td>Saturday 7 October 2016</td>
+                </tr>
+                <tr>
+                  <td>Note</td>
+                  <td>Sunday 8 October 2016</td>
+                </tr>
+                <tr>
+                  <td>Assignment 2</td>
+                  <td>Sunday 8 October 2016</td>
+                </tr>
+              </table>
+          </div>
+        </div>
       </div>
+
     </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab" id="headingThree">
-      <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Schedule
-        </a>
-      </h5>
-    </div>
-    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-      <div class="card-block">
-        Blabla
-      </div>
-    </div>
-  </div>
-</div>
 
 
   </div>
