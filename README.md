@@ -1,4 +1,6 @@
-# Firebase: Build a Real Time Web Chat App Codelab - Start code
+See website here https://eljut.github.io/DH2655-KID-DEL/
+
+Firebase: Build a Real Time Web Chat App Codelab - Start code
 
 This folder contains the starting code for the [Firebase: Build a Real Time Web Chat App Codelab](https://codelabs.developers.google.com/codelabs/firebase-web/).
 
