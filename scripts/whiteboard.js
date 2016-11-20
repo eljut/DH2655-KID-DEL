@@ -1,4 +1,20 @@
-function() {
+// $("#colorpic").live('click',function(){
+// 	console.log("Clicked!");
+// 	$("colorSwatch").show();
+// });
+
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+
+$("#color-popover").popover({
+        html : true, 
+        content: function() {
+          return $("#colorSwatch").html();
+        }
+    });
+
+(function() {
 	/* Canvas */
 
 	var canvas = document.getElementById('drawCanvas');
@@ -48,7 +64,7 @@ function() {
 			// if(m.occupancy > 1){
 			// 	document.getElementById('unit').textContent = 'doodlers';
 			// }
-   			document.getElementById('occupancy').textContent = m.occupancy;
+   			//document.getElementById('occupancy').textContent = m.occupancy;
    			// var p = document.getElementById('occupancy').parentNode;
    			// p.classList.add('anim');
    			// p.addEventListener('transitionend', function(){p.classList.remove('anim');}, false);
