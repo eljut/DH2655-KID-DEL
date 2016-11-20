@@ -17,6 +17,72 @@
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
 }
+
+.logo {
+  margin-left: 30px;
+  height: 70px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.nav {
+  background-color: white !important;
+  height: 93px !important;
+}
+
+.navbar-buttons {
+  padding-top: 25px;
+  font-size: 14pt;
+}
+
+.profile {
+  padding-top: 140px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.profilepicbox {
+  text-align: center;
+}
+
+.profilepic {
+  height: 250px;
+}
+
+.profile-title {
+  font-size: 18pt;
+  color: grey;
+  padding-left: 15px;
+  padding-bottom: 15px;
+}
+
+.medalbox {
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+.medals-title {
+  border-bottom: solid grey 2pt;
+  font-size: 14pt;
+  color: grey;
+  padding-top: 10px;
+}
+
+.medal {
+  height: 100px;
+  padding: 10px;
+}
+
+.card {
+  margin-bottom: 1.5rem !important;
+}
+
+input {
+  color: black !important;
+}
+
 main, #messages-card {
   height: 100%;
   padding-bottom: 0;
