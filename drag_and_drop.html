@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="styles/drag_and_drop.css" />
+</head>
+<body ondragover="drag_over(event)" ondrop="drop(event)">
+
+<aside draggable="true" id="dragme2" ondragstart="drag_start(event)">+</aside>
+
+<img src="images/pi-symbol.png" width="20" height="20" draggable="true" ondragstart="drag_start(event)" id="dragme">
+
+<div id="board"></div>
+
+<script src="scripts/drag_and_drop.js"></script>
+</body>
+</html>
+
