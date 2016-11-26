@@ -32,32 +32,60 @@
       <a class="nav-item nav-link" href="#">Scoreboard</a>
     </div>
   </div>
+	
 	<div class="container-fluid profile">
+		<div class="row vertical-align">
+			<div class="col-md-3"></div>
+			<div class="col-md-6 vertical-align">
+				<div class="connecting-line"></div>
+				<div class="col-md-2">
+					<div id="step0" class="step-indicator"></div>
+				</div>
+				<div class="col-md-2">
+					<div id="step1" class="step-indicator"></div>
+				</div>
+				<div class="col-md-2">
+					<div id="step2" class="step-indicator"></div>
+				</div>
+				<div class="col-md-2">
+					<div id="step3" class="step-indicator"></div>
+				</div>
+				<div class="col-md-2">
+					<div id="step4" class="step-indicator"></div>
+				</div>
+				<div class="col-md-2">
+					<div id="step5" class="step-indicator"></div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="canvas-wrap">
+					<canvas id="timer" class="timer" width="100" height="100"></canvas>
+					<p id="timerText" class="timerText"></p>
+				</div>
+			</div>
+		</div>
+		<hr>
 		<div class="row">
 			<div class="col-md-3"></div>
-			<div class="col-md-6">
-				<a class="col-md-3">
-					<a class="h-line"/>
-				</a>
-				<a id="step0" class="col-md-1 step-indicator-empty"></a>
-				<a id="step1" class="col-md-1 step-indicator-empty"></a>
-				<a id="step2" class="col-md-1 step-indicator-empty"></a>
-				<a id="step3" class="col-md-2 step-indicator-empty"></a>
-				<a id="step4" class="col-md-2 step-indicator-empty"></a>
-				<a id="step5" class="col-md-2 step-indicator-empty"></a>
-			</div>
+			<p id="problem" class="col-md-6"></p>
+			<div class="col-md-3"></div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-3"></div>
+			<textarea id="answer" class="answer col-md-6" placeholder="Answer"></textarea>
 			<div class="col-md-3"></div>
 		</div>
 		<hr>
-		<p id="problem">Test</p>
-		<input id="answer" type="text" placeholder="Answer">
-		<hr>
-		<button class="btn btn-default" onclick="backQuestion()">
+		<div class="col-md-3"></div>
+		<button id="backBtn" class="btn btn-default col-md-1" onclick="backQuestion()">
 			Back
 		</button>
-		<button id="nextBtn" class="btn btn-default" onclick="nextQuestion()">
+		<div class="col-md-4"></div>
+		<button id="nextBtn" class="btn btn-default col-md-1" onclick="nextQuestion()">
 			Next
 		</button>
+		<div class="col-md-3"></div>
 	</div>
 	
 	<script>
@@ -97,15 +125,18 @@
 			currentStep--;
 			document.getElementById("problem").innerHTML = problem[currentStep];
 			document.getElementById("answer").value = answer[currentStep];
-			document.getElementById("step"+currentStep).style.background = "none";
+			document.getElementById("step"+currentStep).style.background = "#fff";
 			document.getElementById("nextBtn").innerHTML = "Next";
 			document.getElementById("answer").style.visibility = "visible";
 		}
 	}
 	
 	function nextQuestion() {
+		if (currentStep == numSteps) {
+			finish();
+		}
 		if (currentStep < numSteps) {
-			document.getElementById("step"+currentStep).style.background = "#226699";
+			document.getElementById("step"+currentStep).style.background = "#269";
 			answer[currentStep] = document.getElementById("answer").value;
 			currentStep++;
 			if (currentStep == numSteps) {
@@ -117,6 +148,64 @@
 				document.getElementById("answer").value = answer[currentStep];
 			}
 		}
+	}
+	
+	var timer = document.getElementById("timer");
+	var context = timer.getContext('2d');
+	var timerHalfHeight = timer.height/2;
+	var timerHalfWidth = timer.width/2;
+	var timerMaxTime = 120.0;
+	var timerTime = 0.0;
+	var PI2 = 2*Math.PI;
+	var arcOffset = -0.5*Math.PI;
+	var timeStep = 0.1;
+	var time = (timerMaxTime - timerTime).toFixed(1)
+	var timerText = document.getElementById("timerText");
+	timerText.innerHTML = time;
+	
+	context.beginPath();
+	context.arc(timerHalfWidth, timerHalfHeight, timerHalfHeight-2, 0, PI2, false);
+	context.closePath();
+	context.lineWidth = 4;
+	context.strokeStyle = '#000';
+	context.stroke();
+	context.strokeStyle = '#999';
+	context.lineWidth = 18;
+	
+	var stepTimer = setInterval(stepTimer, timeStep * 100);
+	
+	function stepTimer() {
+		var oldarc = timerTime/timerMaxTime*PI2
+		timerTime += timeStep;
+		time = (timerMaxTime - timerTime).toFixed(1)
+		timerText.innerHTML = time;
+		if (time <= 0) {
+			timedOut();
+			return;
+		}
+		context.beginPath();
+		context.arc(timerHalfWidth, timerHalfHeight, timerHalfHeight-15, oldarc+arcOffset, timerTime/timerMaxTime*PI2+arcOffset, false);
+		context.stroke();
+	}
+	
+	function timedOut() {
+		clearInterval(stepTimer);
+		context.beginPath();
+		context.arc(timerHalfWidth, timerHalfHeight, timerHalfHeight-15, arcOffset, PI2+arcOffset, false);
+		context.strokeStyle = '#902';
+		context.stroke();
+		document.getElementById("backBtn").disabled = true;
+		document.getElementById("nextBtn").disabled = true;
+	}
+	
+	function finish() {
+		clearInterval(stepTimer);
+		context.beginPath();
+		context.arc(timerHalfWidth, timerHalfHeight, timerHalfHeight-15, arcOffset, timerTime/timerMaxTime*PI2+arcOffset, false);
+		context.strokeStyle = '#092';
+		context.stroke();
+		
+		document.getElementById("backBtn").disabled = true;
 	}
 	</script>
 </body>

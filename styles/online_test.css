@@ -3,23 +3,65 @@ html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
 }
 
-.step-indicator-empty {
-  width: 50px;
-	height: 30px;
-	border-radius: 50%;
-	border: 1px solid black;
-}
-
-.step-indicator-filled {
-  width: 50px;
-	height: 30px;
-	background: #226699;
-	border-radius: 50%;
-	border: 1px solid black;
-}
-
-.h-line {
-	width: 100%;
+.connecting-line {
 	height: 1px;
-	background: #000;
+	background: #999;
+	position: absolute;
+	width: 100%;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	top: 50%;
+	z-index: 0;
+}
+
+.step-indicator{
+	position: relative;
+	height: 30px;
+	max-width: 60%;
+	left: 20%;
+	background: #fff;
+	border-radius: 50%;
+	border: 1px solid #999;
+	transition: 0.1s;
+}
+
+.answer {
+	height: 105px;
+	border: 2px solid #999;
+	box-sizing: border-box;
+	outline: none;
+	resize: none;
+}
+
+.vertical-align {
+	display: flex;
+	align-items: center;
+}
+
+.canvas-wrap {
+	position: relative;
+	left: 50%;
+	width: 100px;
+	height: 100px;
+	transform: translate(-50%, 0);
+}
+
+.timer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
+
+.testBorder {
+	border: 2px solid green;
+}
+
+.timerText {
+	position: relative;
+	text-align: center;
+	top: 50%;
+	transform: translate(0, -50%);
+	z-index: 1;
 }
