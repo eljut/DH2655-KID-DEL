@@ -3,6 +3,8 @@
 // 	$("colorSwatch").show();
 // });
 
+var notediv = false;
+
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
 });
@@ -14,6 +16,57 @@ $("#color-popover").popover({
         }
     });
 
+$("#notesymbol").click(function(){
+	if (notediv == false) {
+		document.getElementById("notebox").style.display = "inline";
+		notediv = true;
+	} else {
+		$("#notebox").hide();
+		notediv = false;
+	}
+});
+
+$("#calculatoricon").click(function(){
+	console.log("calculator activated");
+	document.getElementById("calculator").style.display = "block";
+	document.getElementById("calculator").style.position = "absolute";
+	//$("#notebox").style.display = "block";
+});
+
+$("#closecalc").click(function() {
+	console.log("close calc");
+	document.getElementById("calculator").style.display = "none";
+});
+
+$("#gridtype").click(function(){
+	$("#drawCanvas").addClass("grid");
+});
+
+$("#nongridtype").click(function(){
+	$("#drawCanvas").removeClass("grid");
+});
+
+$(document).mouseup(function (e)
+{
+    var notebox = $("#notebox");
+    var notebutton = $("#notesymbol");
+
+    if (!notebox.is(e.target) // if the target of the click isn't the container...
+        && notebox.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        notebox.hide();
+        notediv = false;
+    }
+});
+
+function checkNoteDiv () {
+	if (notediv == true) {
+		document.getElementById("notebox").style.display = "none";
+		notediv = false;
+	}
+
+}
+
 (function() {
 	/* Canvas */
 
@@ -21,9 +74,18 @@ $("#color-popover").popover({
 	var ctx = canvas.getContext('2d');
 	var color = document.querySelector(':checked').getAttribute('data-color');
 
-	canvas.width = Math.min(document.documentElement.clientWidth, window.innerWidth || 300);
+	canvas.width = Math.min(document.getElementById("whiteboard").clientWidth + 40, window.innerWidth || 300);
 	canvas.height = Math.min(document.documentElement.clientHeight, window.innerHeight || 300);
-	 
+	
+	var whiteboarddiv = document.getElementById('whiteboard');
+	whiteboarddiv.setAttribute("style","height:500px");
+	whiteboarddiv.style.height = canvas.height + "px";
+	whiteboarddiv.style.width = canvas.width + "px";
+
+	var toolcol = document.getElementById('toolcolumn');
+	toolcol.setAttribute("style","height:500px");
+	toolcol.style.height = canvas.height + "px";
+
 	ctx.strokeStyle = color;
 	ctx.lineWidth = '3';
 	ctx.lineCap = ctx.lineJoin = 'round';

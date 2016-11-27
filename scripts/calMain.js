@@ -1,41 +1,3 @@
-<!DOCTYPE html>
-<html>
-<header>
-	<meta charset="utf-8">
-<!-- 	<script type="text/javascript" src="calMain.js"></script> -->
-	<<link rel="stylesheet" type="text/css" href="calStyle.css">
-</header>
-<body>
-<div id="calculator">
-	<!-- Screen and clr key -->
-	<div class="top">
-		<span class="clear">C</span>
-		<div class="screen"></div>
-	</div>
-
-	<div class="keys">
-	<!-- Ops and keys -->
-		<span>7</span>
-		<span>8</span>
-		<span>9</span>
-		<span class="operator">+</span>
-		<span>4</span>
-		<span>5</span>
-		<span>6</span>
-		<span class="operator">-</span>
-		<span>1</span>
-		<span>2</span>
-		<span>3</span>
-		<span class="operator">/</span>
-		<span>0</span>
-		<span>.</span>
-		<span class="eval">=</span>
-		<span class="operator">x</span>
-	</div>
-</div>
-
-<!-- calc script -->
-<script type="text/javascript">
 // Get all the keys from document
 var keys = document.querySelectorAll('#calculator span');
 var operators = ['+', '-', 'x', '÷'];
@@ -121,9 +83,3 @@ for(var i = 0; i < keys.length; i++) {
 		e.preventDefault();
 	}
 }
-</script>
-
-<!-- PrefixFree -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js" type="text/javascript"></script>
-</body>
-</html>

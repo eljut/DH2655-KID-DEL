@@ -46,16 +46,88 @@ body.alt2 {
 }
 */
 
-.toolbox {
+.container-fluid {
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
+#drawCanvas {
+	border: solid grey 1pt;
+}
+
+.grid {
+	background: url(http://wphooper.com/svg/examples/grid_pattern.png) left top repeat;
+}
+
+#whiteboard {
+	position: relative !important;
+	/*height: 100% !important;*/
+}
+
+#papertype {
+	margin-top: 100px;
+	text-align: right;
+}
+
+.papertype {
+	height: 25px;
+	position: relative;
+}
+
+.toolcolumn {
 	background-color: ;
-	margin-top: 150px;
 	width: 70px;
+	position: relative;
 	
+}
+
+.toolbox {
+	margin-top: 150px;
 }
 
 .tool {
 	height: 40px;
 	margin-bottom: 20px; 
+}
+
+.notebook {
+	margin-top: 100px;
+	margin-left: -22px;
+}
+
+#notesymbol {
+	height: 60px;
+	bottom: 5px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+#notethumb {
+	height: 100px;
+}
+
+#notebox {
+	display: none;
+	position: absolute; 
+	bottom: 0;
+	background-color: white;
+	width: 97%;
+}
+
+#innernotebox {
+	border: solid grey 1pt;
+	padding: 20px;
+	border-radius: 20px;
+}
+
+#dailyNote {
+	display: inline-block;
+	padding: 20px;
+	border-right: solid grey 1pt;
+}
+
+#next-button {
+	height: 50px;
 }
 
 .hidden {
@@ -65,10 +137,28 @@ body.alt2 {
 #vid-box {
 }
 
+.profilepic {
+	height: 350px !important;
+}
+
+.dropdown {
+	text-align: left;
+}
+
+.callmenu {
+	width: 85%;
+}
+
+.callbutton {
+	position: absolute;
+	width: 15%;
+}
+
 .chatbox {
 	margin-top: 100px;
 	text-align: center;
 	border: solid grey 1pt;
+	float: right;
 }
 
 .popover {
@@ -140,12 +230,11 @@ label {
 	font-size: 32px;
 	line-height: 46px;
 }
-label[for=color01] {background: gold;}
-label[for=color02] {background: darkorange;}
-label[for=color03] {background: navy;}
+label[for=color01] {background: black;}
+label[for=color02] {background: blue;}
+label[for=color03] {background: red;}
 label[for=color04] {background: yellowgreen;}
-label[for=color05] {background: firebrick;}
-label[for=color06] {background: powderblue;}
+label[for=color05] {background: gold;}
 
 footer {
 	margin-top: 1.5em;
