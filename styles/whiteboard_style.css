@@ -64,6 +64,27 @@ body.alt2 {
 	/*height: 100% !important;*/
 }
 
+/*#download {
+	margin-top: 100px;
+	float: left;
+	position: absolute;
+}*/
+
+.download-icon {
+	height: 25px;
+}
+
+.save-icon {
+	height: 30px;
+	margin-left: 5px;
+}
+
+.canvastools {
+	margin-top: 103px;
+	float: left;
+	position: absolute;
+}
+
 #papertype {
 	margin-top: 100px;
 	text-align: right;
@@ -75,7 +96,7 @@ body.alt2 {
 }
 
 .toolcolumn {
-	background-color: ;
+	background-color: #173863 ;
 	width: 70px;
 	position: relative;
 	
@@ -87,7 +108,66 @@ body.alt2 {
 
 .tool {
 	height: 40px;
-	margin-bottom: 20px; 
+	margin-bottom: 20px;
+	color: #22BD39;
+}
+
+.pipic {
+	height: 30px !important;
+}
+
+.thickness {
+	text-align: center !important;
+}
+
+.popover-content {
+	text-align: center !important;
+}
+
+.circle20 {
+	border: solid grey 1pt;
+	border-radius: 50%;
+	margin-bottom: 25px;
+	margin-left: 10px;
+	margin-top: 15px;
+	width: 20px;
+	height: 20px;
+}
+
+.circle10 {
+	border: solid grey 1pt;
+	border-radius: 50%;
+	margin-bottom: 25px;
+	margin-left: 15px;
+	width: 10px;
+	height: 10px;
+}
+
+.circle5 {
+	border: solid grey 1pt;
+	border-radius: 50%;
+	margin-bottom: 25px;
+	margin-left: 17px;
+	width: 5px;
+	height: 5px;
+}
+
+.circle3 {
+	border: solid grey 1pt;
+	border-radius: 50%;
+	margin-bottom: 25px;
+	margin-left: 18px;
+	width: 3px;
+	height: 3px;
+}
+
+.circle1 {
+	border: solid grey 1pt;
+	border-radius: 50%;
+	margin-left: 19px;
+	margin-bottom: 15px;
+	width: 1px;
+	height: 1px;
 }
 
 .notebook {
@@ -112,6 +192,22 @@ body.alt2 {
 	bottom: 0;
 	background-color: white;
 	width: 97%;
+}
+
+#noteslider {
+	border: solid grey 1pt;
+	border-radius: 10px;
+	bottom: 0;
+	position: absolute;
+	width: 97%;
+}
+
+.hideNoteslider {
+	visibility: hidden;
+}
+
+.showNoteslider {
+	visibility: visible;
 }
 
 #innernotebox {
@@ -163,6 +259,7 @@ body.alt2 {
 
 .popover {
 	width: 70px !important;
+	left: 6px !important;
 }
 
 header {

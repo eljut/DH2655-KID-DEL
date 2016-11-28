@@ -20,6 +20,7 @@
   <link rel="stylesheet" type="text/css" href="styles/main.css" />
   <link rel="stylesheet" type="text/css" href="styles/video_chat.css" />
   <link rel="stylesheet" type="text/css" href="styles/calStyle.css">
+  <link rel="stylesheet" type="text/css" href="jquery.bxslider/jquery.bxslider.css" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
 
@@ -42,10 +43,10 @@
 <div class="container-fluid">
   <div class="col-md-1 toolcolumn" id="toolcolumn">
     <div class="toolbox">
-      <img class="tool penpic" src="images/pen-symbol" alt="pen" data-toggle="popover" data-content="And here's some amazing content. It's very engaging. Right?">
-      <img class="tool eraserpic" src="images/eraser-symbol" alt="eraser" data-toggle="popover" data-content="And here's some amazing content. It's very engaging. Right?">
+      <img class="tool penpic" id="pen-popover" src="images/penicon.png" alt="pen" data-toggle="popover">
+      <img class="tool eraserpic" src="images/erasericon.png" alt="eraser" data-toggle="popover" data-content="And here's some amazing content. It's very engaging. Right?">
       <img class="tool" id="color-popover" src="images/color-symbol" alt="color" data-toggle="popover">
-      <img class="tool trianglepic" src="images/triangle.gif" alt="triangle" data-toggle="popover" data-content="And here's some amazing content. It's very engaging. Right?">
+      <img class="tool trianglepic" src="images/triangle.png" alt="triangle" data-toggle="popover" data-content="And here's some amazing content. It's very engaging. Right?">
       <img class="tool pipic" src="images/pi-symbol.png" alt="pi" data-toggle="popover" data-content="And here's some amazing content. It's very engaging. Right?">
       <img class="tool calculatorpic" id="calculatoricon" src="images/calculator.png" alt="calculator">
     </div>
@@ -66,63 +67,109 @@
         <input type="radio" name="color" id="color05" data-color="gold"> <label for="color05"></label>  
       </div>
 
+      <div id="thickness" class="thickness hidden"> 
+        <div class="circle20"></div>
+        <div class="circle10"></div>
+        <div class="circle5"></div>
+        <div class="circle3"></div>
+        <div class="circle1"></div>
+      </div>
+      
+      <div class="canvastools">
+        <a id="download">
+          <img class="download-icon" src="images/downloadicon.png" alt="download">
+        </a>
+        <a id="save">
+          <img class="save-icon" src="images/saveicon.png" alt="save">
+        </a>
+      </div>
+
       <div id="papertype">
         <img class="papertype" id="gridtype" src="images/gridicon.png" alt="grid">
-        <img class="papertype" id="nongridtype" src="images/gridicon.png" alt="grid">
+        <img class="papertype" id="nongridtype" src="images/nongridicon.png" alt="grid">
       </div>
 
-  <div id="calculator">
+      <div id="calculator">
 
-    <img src="images/closebutton.png" alt="close" id="closecalc">
-  <!-- Screen and clr key -->
-  <div class="top">
-    <span class="clear">C</span>
-    <div class="screen"></div>
-  </div>
-
-  <div class="keys">
-  <!-- Ops and keys -->
-    <span>7</span>
-    <span>8</span>
-    <span>9</span>
-    <span class="operator">+</span>
-    <span>4</span>
-    <span>5</span>
-    <span>6</span>
-    <span class="operator">-</span>
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
-    <span class="operator">/</span>
-    <span>0</span>
-    <span>.</span>
-    <span class="eval">=</span>
-    <span class="operator">x</span>
-  </div>
-</div>
-
-    <div id="notebox">
-        <div id="innernotebox">
-        <div id="dailyNote">
-          <div class="row">Idag</div>
-          <div class="row">
-            <img id="notethumb" src="images/scribble.png" alt="scribble">
-            <img id="notethumb" src="images/scribble.png" alt="scribble">
-            <img id="notethumb" src="images/scribble.png" alt="scribble">
-          </div>
+        <img src="images/closebutton.png" alt="close" id="closecalc">
+      <!-- Screen and clr key -->
+        <div class="top">
+          <span class="clear">C</span>
+          <div class="screen"></div>
         </div>
-        <div id="dailyNote">
-          <div class="row">26-11-16</div>
-          <div class="row">
-            <img id="notethumb" src="images/scribble.png" alt="scribble">
-            <img id="notethumb" src="images/scribble.png" alt="scribble">
-            <img id="notethumb" src="images/scribble.png" alt="scribble">
-          </div>
+
+        <div class="keys">
+        <!-- Ops and keys -->
+          <span>7</span>
+          <span>8</span>
+          <span>9</span>
+          <span class="operator">+</span>
+          <span>4</span>
+          <span>5</span>
+          <span>6</span>
+          <span class="operator">-</span>
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span class="operator">/</span>
+          <span>0</span>
+          <span>.</span>
+          <span class="eval">=</span>
+          <span class="operator">x</span>
         </div>
-        <img id="next-button" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-128.png"></img>
       </div>
-    </div>
 
+      <div id="notebox">
+          <div id="innernotebox">
+          <div id="dailyNote">
+            <div class="row">Idag</div>
+            <div class="row">
+              <img id="notethumb" src="images/scribble.png" alt="scribble">
+              <img id="notethumb" src="images/scribble.png" alt="scribble">
+              <img id="notethumb" src="images/scribble.png" alt="scribble">
+            </div>
+          </div>
+          <div id="dailyNote">
+            <div class="row">26-11-16</div>
+            <div class="row">
+              <img id="notethumb" src="images/scribble.png" alt="scribble">
+              <img id="notethumb" src="images/scribble.png" alt="scribble">
+              <img id="notethumb" src="images/scribble.png" alt="scribble">
+            </div>
+          </div>
+          <img id="next-button" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-128.png"></img>
+        </div>
+      </div>
+      <div id="noteslider" class="hideNoteslider">
+        <div class="bxslider">
+          <div class="slidercontent">
+            Idag
+            <img src="images/scribble.png" id="notethumb">
+          </div>
+          <div class="slidercontent">
+            <br>
+            <img src="images/scribble.png" id="notethumb">
+          </div>
+          <div class="slidercontent">
+            <br>
+            <img src="images/scribble.png" id="notethumb">
+          </div>
+          <div class="slidercontent notedivider"></div>
+          <div class="slidercontent">
+            26-11-16
+            <img src="images/scribble.png" id="notethumb">
+          </div>
+          <div class="slidercontent">
+            <br>
+            <img src="images/scribble.png" id="notethumb">
+          </div>
+          <div class="slidercontent">
+            <br>
+            <img src="images/scribble.png" id="notethumb">
+          </div>
+          <div class="slidercontent notedivider"></div>
+        </div>
+      </div>
   </div>
 
   <!-- Chat -->
@@ -139,7 +186,7 @@
           <a class="dropdown-item" href="#">Friend 1</a>
           <a class="dropdown-item" href="#">Friend 2</a>
         </div>
-        <button class="btn btn-primary callbutton" type="button">Call</button>
+        <button class="btn btn-primary callbutton" type="button" name="loginForm" id="login">Call</button>
       </div>
       <!-- <form name="loginForm" id="login" action="#" onsubmit="return login(this);">
         <input type="text" name="username" id="username" placeholder="Pick a username!" />
@@ -150,6 +197,8 @@
         <input type="submit" value="Call"/>
       </form>
     -->
+    </div>
+    <div class="row" id="textchatbox">
     </div>
 
 <!--video chat room ends-->
@@ -193,6 +242,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+<script src="jquery.bxslider/jquery.bxslider.min.js"></script>
 
 <script src="scripts/whiteboard.js"></script>
 <script src="scripts/calMain.js"></script>

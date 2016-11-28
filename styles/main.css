@@ -27,8 +27,8 @@ html, body {
 
 .nav {
   background-color: white !important;
-  height: 93px !important;
-  border-bottom: solid grey 1pt;
+  height: 98px !important;
+  border-bottom: solid #22BD39 3pt;
 }
 
 .navbar-buttons {

@@ -10,21 +10,39 @@ $(document).ready(function(){
 });
 
 $("#color-popover").popover({
-        html : true, 
-        content: function() {
-          return $("#colorSwatch").html();
-        }
-    });
+    html : true, 
+    content: function() {
+      return $("#colorSwatch").html();
+    }
+});
+
+$("#pen-popover").popover({
+    html : true, 
+    content: function() {
+      return $("#thickness").html();
+    }
+});
+
+// $(document).ready(function(){
+//     $("#noteslider").hide();
+// });
 
 $("#notesymbol").click(function(){
 	if (notediv == false) {
-		document.getElementById("notebox").style.display = "inline";
+		console.log("showing notes");
+		$("#noteslider").removeClass("hideNoteslider");
+		$("#noteslider").addClass("showNoteslider");
+		//$("#noteslider").show();
 		notediv = true;
 	} else {
-		$("#notebox").hide();
+		console.log("hiding notes");
+		$("#noteslider").addClass("hideNoteslider");
+		$("#noteslider").removeClass("showNoteslider");
+		//$("#noteslider").hide();
 		notediv = false;
 	}
 });
+
 
 $("#calculatoricon").click(function(){
 	console.log("calculator activated");
@@ -48,24 +66,27 @@ $("#nongridtype").click(function(){
 
 $(document).mouseup(function (e)
 {
-    var notebox = $("#notebox");
+    var notebox = $("#noteslider");
     var notebutton = $("#notesymbol");
 
-    if (!notebox.is(e.target) // if the target of the click isn't the container...
+    if (!notebox.is(e.target) && !notebutton.is(e.target)// if the target of the click isn't the container...
         && notebox.has(e.target).length === 0) // ... nor a descendant of the container
     {
-        notebox.hide();
+        notebox.addClass("hideNoteslider");//hide();
+        notebox.removeClass("showNoteslider");
         notediv = false;
     }
 });
 
-function checkNoteDiv () {
-	if (notediv == true) {
-		document.getElementById("notebox").style.display = "none";
-		notediv = false;
-	}
-
-}
+$(document).ready(function(){
+  $('.bxslider').bxSlider({
+    slideWidth: 200,
+    minSlides: 2,
+    maxSlides: 3,
+    slideMargin: 5,
+    caption: true
+  });
+});
 
 (function() {
 	/* Canvas */
@@ -199,4 +220,55 @@ function checkNoteDiv () {
 
 	  	plots = [];
 	}
+
+	//FOR PASTING OF IMAGE ONTO CANVAS
+
+	window.addEventListener("paste", pasteHandler); //chrome
+//handler
+function pasteHandler(e){
+	console.log("pasting");
+	if(e.clipboardData == false) return false; //empty
+    var items = e.clipboardData.items;
+    console.log(items);
+    if(items == undefined) return false;
+    for (var i = 0; i < items.length; i++) {
+        if (items[i].type.indexOf("image") == -1) continue; //not image
+        var blob = items[i].getAsFile();
+        var URLObj = window.URL || window.webkitURL;
+        var source = URLObj.createObjectURL(blob);
+        paste_createImage(source);
+        }
+	}
+//draw pasted object
+function paste_createImage(source){
+	var pastedImage = new Image();
+	pastedImage.onload = function(){
+        ctx.drawImage(pastedImage, 0, 0);
+		}
+	pastedImage.src = source;
+	}
+
+	// FOR DOWNLOADING OF CANVAS
+
+	// save canvas image as data url (png format by default)
+     var dataURL = canvas.toDataURL();
+
+    // set canvasImg image src to dataURL
+	// so it can be saved as an image
+	canvas.src = dataURL;
+
+	function downloadCanvas(link, canvasId, filename) {
+		link.href = canvas.toDataURL();
+		link.download = filename;
+	}
+
+	/** 
+	* The event handler for the link's onclick event. We give THIS as a
+	* parameter (=the link element), ID of the canvas and a filename.
+	*/
+	document.getElementById('download').addEventListener('click', function() {
+		console.log("download");
+		downloadCanvas(this, 'canvas', 'MyAcademyNotes.png');
+	}, false);
+
 })();
