@@ -6,11 +6,11 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 var PHONE = window.PHONE = function(config) {
     var PHONE         = function(){};
-    var pubnub        = PubNub(config);
-    var pubkey        = config.publish_key   || 'pub-c-71ef7cc3-cbba-4681-a7a0-0f04c90d2ece';
+    var pubnub        = PUBNUB(config);
+    var pubkey        = config.publish_key   || 'demo';
     var snapper       = function(){ return ' ' }
-    var subkey        = config.subscribe_key || 'sub-c-baf5124e-b619-11e6-b697-0619f8945a4f';
-    var sessionid     = PubNub.uuid();
+    var subkey        = config.subscribe_key || 'demo';
+    var sessionid     = PUBNUB.uuid();
     var mystream      = null;
     var myvideo       = document.createElement('video');
     var myconnection  = false;
@@ -276,7 +276,7 @@ var PHONE = window.PHONE = function(config) {
     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     PHONE.send = function( message, number ) {
         if (number) return get_conversation(number).send(message);
-        PubNub.each( conversations, function( number, talk ) {
+        PUBNUB.each( conversations, function( number, talk ) {
             talk.send(message);
         } );
     };
@@ -286,7 +286,7 @@ var PHONE = window.PHONE = function(config) {
     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     PHONE.hangup = function(number) {
         if (number) return get_conversation(number).hangup();
-        PubNub.each( conversations, function( number, talk ) {
+        PUBNUB.each( conversations, function( number, talk ) {
             talk.hangup();
         } );
     };
@@ -294,11 +294,11 @@ var PHONE = window.PHONE = function(config) {
     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     // Auto-hangup on Leave
     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    PubNub.bind( 'unload,beforeunload', window, function() {
+    PUBNUB.bind( 'unload,beforeunload', window, function() {
         if (PHONE.goodbye) return true;
         PHONE.goodbye = true;
 
-        PubNub.each( conversations, function( number, talk ) {
+        PUBNUB.each( conversations, function( number, talk ) {
             var mynumber = config.number;
             var packet   = { hangup:true };
             var message  = { packet:packet, id:sessionid, number:mynumber };

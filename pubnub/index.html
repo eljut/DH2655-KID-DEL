@@ -93,7 +93,7 @@
     you deploy your app to a production enviornment.
     https://github.com/pubnub/javascript#cdn-links
 -->
-<script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.3.2.min.js"></script>
+<script src="https://cdn.pubnub.com/pubnub-3.16.4.min.js"></script>
 <script src="js/webrtc.js"></script>
 <script src="js/sound.js"></script>
 <script>(function(){
@@ -102,8 +102,8 @@
 // Generate Random Number if Needed
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 var urlargs         = urlparams();
-var my_number       = PubNub.$('my-number');
-var my_link         = PubNub.$('my-number-link');
+var my_number       = PUBNUB.$('my-number');
+var my_link         = PUBNUB.$('my-number-link');
 var number          = urlargs.number || Math.floor(Math.random()*999+1);
 
 my_number.number    = number;
@@ -127,7 +127,7 @@ function urlparams() {
     var params = {};
     if (location.href.indexOf('?') < 0) return params;
 
-    PubNub.each(
+    PUBNUB.each(
         location.href.split('?')[1].split('&'),
         function(data) { var d = data.split('='); params[d[0]] = d[1]; }
     );
@@ -139,7 +139,7 @@ function urlparams() {
 // Construct URL Param String
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 function urlstring(params) {
-    return location.href.split('?')[0] + '?' + PubNub.map(
+    return location.href.split('?')[0] + '?' + PUBNUB.map(
         params, function( key, val) { return key + '=' + val }
     ).join('&');
 }
@@ -147,14 +147,14 @@ function urlstring(params) {
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 // Calling & Answering Service
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-var video_out = PubNub.$('video-display');
-var img_out   = PubNub.$('video-thumbnail');
-var img_self  = PubNub.$('video-self');
+var video_out = PUBNUB.$('video-display');
+var img_out   = PUBNUB.$('video-thumbnail');
+var img_self  = PUBNUB.$('video-self');
 
 var phone     = window.phone = PHONE({
     number        : my_number.number, // listen on this line
-    publish_key   : 'pub-c-71ef7cc3-cbba-4681-a7a0-0f04c90d2ece',
-    subscribe_key : 'sub-c-baf5124e-b619-11e6-b697-0619f8945a4f',
+    publish_key   : 'pub-c-561a7378-fa06-4c50-a331-5c0056d0163c',
+    subscribe_key : 'sub-c-17b7db8a-3915-11e4-9868-02ee2ddab7fe',
     ssl           : true
 });
 
@@ -165,7 +165,7 @@ function connected(session) {
     video_out.innerHTML = '';
     video_out.appendChild(session.video);
 
-    PubNub.$('number').value = ''+session.number;
+    PUBNUB.$('number').value = ''+session.number;
     sounds.play('sound/hi');
     console.log("Hi!");
 }
@@ -212,25 +212,25 @@ phone.ready(function(){
     // Auto Call
     if ('call' in urlargs) {
         var number = urlargs['call'];
-        PubNub.$('number').value = number;
+        PUBNUB.$('number').value = number;
         dial(number);
     }
 
     // Make a Phone Call
-    PubNub.bind( 'mousedown,touchstart', PubNub.$('dial'), function(){
-        var number = PubNub.$('number').value;
+    PUBNUB.bind( 'mousedown,touchstart', PUBNUB.$('dial'), function(){
+        var number = PUBNUB.$('number').value;
         if (!number) return;
         dial(number);
     } );
 
     // Hanup Call
-    PubNub.bind( 'mousedown,touchstart', PubNub.$('hangup'), function() {
+    PUBNUB.bind( 'mousedown,touchstart', PUBNUB.$('hangup'), function() {
         phone.hangup();
         set_icon('facetime-video');
     } );
 
     // Take Picture
-    PubNub.bind( 'mousedown,touchstart', PubNub.$('snap'), function() {
+    PUBNUB.bind( 'mousedown,touchstart', PUBNUB.$('snap'), function() {
         var photo = phone.snap();
         img_self.innerHTML = ' ';
         img_self.appendChild(photo.image);
@@ -260,13 +260,13 @@ phone.receive(function(session){
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 // Chat
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-var chat_in  = PubNub.$('pubnub-chat-input');
-var chat_out = PubNub.$('pubnub-chat-output');
+var chat_in  = PUBNUB.$('pubnub-chat-input');
+var chat_out = PUBNUB.$('pubnub-chat-output');
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 // Send Chat MSG and update UI for Sending Messages
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-PubNub.bind( 'keydown', chat_in, function(e) {
+PUBNUB.bind( 'keydown', chat_in, function(e) {
     if ((e.keyCode || e.charCode) !== 13)     return true;
     if (!chat_in.value.replace( /\s+/g, '' )) return true;
 
@@ -282,7 +282,7 @@ function add_chat( number, text ) {
     if (!text.replace( /\s+/g, '' )) return true;
 
     var newchat       = document.createElement('div');
-    newchat.innerHTML = PubNub.supplant(
+    newchat.innerHTML = PUBNUB.supplant(
         '<strong>{number}: </strong> {message}', {
         message : safetxt(text),
         number  : safetxt(number)
