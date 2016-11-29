@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- DIAL CONTROLS -->
             <div class="row">
                 <div class="col-sm-6 col-xs-7">
@@ -78,7 +78,7 @@
                     </button>
                     <button id="hangup" class="btn btn-danger">
                         <span class="glyphicon glyphicon-ban-circle"></span>
-                    </button>                    
+                    </button>
                 </div>
             </div>
         </div>
@@ -88,12 +88,12 @@
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
 <!-- WebRTC Peer Connections -->
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
-<!-- IMPORTANT: THIS IS AN UNMINIFIED DEVELOPMENT PUBNUB LIBRARY 
-    replace this with the latest versioned, minified CDN lib link before 
+<!-- IMPORTANT: THIS IS AN UNMINIFIED DEVELOPMENT PUBNUB LIBRARY
+    replace this with the latest versioned, minified CDN lib link before
     you deploy your app to a production enviornment.
     https://github.com/pubnub/javascript#cdn-links
 -->
-<script src="https://cdn.pubnub.com/pubnub-dev.js"></script>
+<script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.3.2.min.js"></script>
 <script src="js/webrtc.js"></script>
 <script src="js/sound.js"></script>
 <script>(function(){
@@ -153,8 +153,8 @@ var img_self  = PUBNUB.$('video-self');
 
 var phone     = window.phone = PHONE({
     number        : my_number.number, // listen on this line
-    publish_key   : 'pub-c-561a7378-fa06-4c50-a331-5c0056d0163c',
-    subscribe_key : 'sub-c-17b7db8a-3915-11e4-9868-02ee2ddab7fe',
+    publish_key   : 'pub-c-71ef7cc3-cbba-4681-a7a0-0f04c90d2ece',
+    subscribe_key : 'sub-c-baf5124e-b619-11e6-b697-0619f8945a4f',
     ssl           : true
 });
 

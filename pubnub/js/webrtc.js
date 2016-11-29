@@ -7,9 +7,9 @@
 var PHONE = window.PHONE = function(config) {
     var PHONE         = function(){};
     var pubnub        = PUBNUB(config);
-    var pubkey        = config.publish_key   || 'demo';
+    var pubkey        = config.publish_key   || 'pub-c-71ef7cc3-cbba-4681-a7a0-0f04c90d2ece';
     var snapper       = function(){ return ' ' }
-    var subkey        = config.subscribe_key || 'demo';
+    var subkey        = config.subscribe_key || 'sub-c-baf5124e-b619-11e6-b697-0619f8945a4f';
     var sessionid     = PUBNUB.uuid();
     var mystream      = null;
     var myvideo       = document.createElement('video');
@@ -43,7 +43,7 @@ var PHONE = window.PHONE = function(config) {
     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     // Local Microphone and Camera Media (one per device)
     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    navigator.getUserMedia = 
+    navigator.getUserMedia =
         navigator.getUserMedia       ||
         navigator.webkitGetUserMedia ||
         navigator.mozGetUserMedia    ||
@@ -152,7 +152,7 @@ var PHONE = window.PHONE = function(config) {
                 talk.pc.close();
                 close_conversation(number);
             };
-            
+
             // Stop Audio/Video Stream
             talk.stop = function() {
                 if (mystream) mystream.stop();
