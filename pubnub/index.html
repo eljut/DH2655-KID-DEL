@@ -102,8 +102,8 @@
 // Generate Random Number if Needed
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 var urlargs         = urlparams();
-var my_number       = PUBNUB.$('my-number');
-var my_link         = PUBNUB.$('my-number-link');
+var my_number       = PubNub.$('my-number');
+var my_link         = PubNub.$('my-number-link');
 var number          = urlargs.number || Math.floor(Math.random()*999+1);
 
 my_number.number    = number;
@@ -127,7 +127,7 @@ function urlparams() {
     var params = {};
     if (location.href.indexOf('?') < 0) return params;
 
-    PUBNUB.each(
+    PubNub.each(
         location.href.split('?')[1].split('&'),
         function(data) { var d = data.split('='); params[d[0]] = d[1]; }
     );
@@ -139,7 +139,7 @@ function urlparams() {
 // Construct URL Param String
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 function urlstring(params) {
-    return location.href.split('?')[0] + '?' + PUBNUB.map(
+    return location.href.split('?')[0] + '?' + PubNub.map(
         params, function( key, val) { return key + '=' + val }
     ).join('&');
 }
@@ -147,9 +147,9 @@ function urlstring(params) {
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 // Calling & Answering Service
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-var video_out = PUBNUB.$('video-display');
-var img_out   = PUBNUB.$('video-thumbnail');
-var img_self  = PUBNUB.$('video-self');
+var video_out = PubNub.$('video-display');
+var img_out   = PubNub.$('video-thumbnail');
+var img_self  = PubNub.$('video-self');
 
 var phone     = window.phone = PHONE({
     number        : my_number.number, // listen on this line
@@ -165,7 +165,7 @@ function connected(session) {
     video_out.innerHTML = '';
     video_out.appendChild(session.video);
 
-    PUBNUB.$('number').value = ''+session.number;
+    PubNub.$('number').value = ''+session.number;
     sounds.play('sound/hi');
     console.log("Hi!");
 }
@@ -212,25 +212,25 @@ phone.ready(function(){
     // Auto Call
     if ('call' in urlargs) {
         var number = urlargs['call'];
-        PUBNUB.$('number').value = number;
+        PubNub.$('number').value = number;
         dial(number);
     }
 
     // Make a Phone Call
-    PUBNUB.bind( 'mousedown,touchstart', PUBNUB.$('dial'), function(){
-        var number = PUBNUB.$('number').value;
+    PubNub.bind( 'mousedown,touchstart', PubNub.$('dial'), function(){
+        var number = PubNub.$('number').value;
         if (!number) return;
         dial(number);
     } );
 
     // Hanup Call
-    PUBNUB.bind( 'mousedown,touchstart', PUBNUB.$('hangup'), function() {
+    PubNub.bind( 'mousedown,touchstart', PubNub.$('hangup'), function() {
         phone.hangup();
         set_icon('facetime-video');
     } );
 
     // Take Picture
-    PUBNUB.bind( 'mousedown,touchstart', PUBNUB.$('snap'), function() {
+    PubNub.bind( 'mousedown,touchstart', PubNub.$('snap'), function() {
         var photo = phone.snap();
         img_self.innerHTML = ' ';
         img_self.appendChild(photo.image);
@@ -260,13 +260,13 @@ phone.receive(function(session){
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 // Chat
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-var chat_in  = PUBNUB.$('pubnub-chat-input');
-var chat_out = PUBNUB.$('pubnub-chat-output');
+var chat_in  = PubNub.$('pubnub-chat-input');
+var chat_out = PubNub.$('pubnub-chat-output');
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 // Send Chat MSG and update UI for Sending Messages
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-PUBNUB.bind( 'keydown', chat_in, function(e) {
+PubNub.bind( 'keydown', chat_in, function(e) {
     if ((e.keyCode || e.charCode) !== 13)     return true;
     if (!chat_in.value.replace( /\s+/g, '' )) return true;
 
@@ -282,7 +282,7 @@ function add_chat( number, text ) {
     if (!text.replace( /\s+/g, '' )) return true;
 
     var newchat       = document.createElement('div');
-    newchat.innerHTML = PUBNUB.supplant(
+    newchat.innerHTML = PubNub.supplant(
         '<strong>{number}: </strong> {message}', {
         message : safetxt(text),
         number  : safetxt(number)
