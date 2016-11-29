@@ -4,7 +4,7 @@
 // -----------------------------------------------------------------------
 var sounds = (function(){
     var soundbank = {}
-    ,   p         = PUBNUB;
+    ,   p         = PubNub;
 
     function stop(audio) {
         if (!audio) return;
