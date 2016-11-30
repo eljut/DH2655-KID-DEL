@@ -6,7 +6,7 @@ var pubnub = PUBNUB.init({
         console.log('Error:', error);
     }
 });
-console.log('pubnub initialized');
+/*console.log('pubnub initialized');
 
 pubnub.subscribe({
     channel : 'public_channel',
@@ -17,34 +17,33 @@ pubnub.subscribe({
         // Handle error here
         console.log(JSON.stringify(error));
     }
-});
+});*/
 
 document.getElementById("pubnub-chat-input")
 	.addEventListener("keyup", function(event) {
 		event.preventDefault();
-		if (event.keyCode == 13) {
+		if (event.keyCode == 13 && document.getElementById("pubnub-chat-input").value != '') {
 			publishMessage();
 		}
 	});
 	
 function publishMessage() {
 	var chat_in = document.getElementById("pubnub-chat-input");
-	pubnub.publish({
+	/*pubnub.publish({
 		channel : 'public_channel',
 		message : chat_in.value
 	});
-	console.log('message published: ' + chat_in.value);
+	console.log('message published: ' + chat_in.value);*/
+	
 	// for testing.
-	/*var chat_out = document.getElementById("pubnub-chat-output");
-  var newchat = document.createElement('div');
-	newchat.innerHTML = chat_in.value;
-  chat_out.insertBefore( newchat, chat_out.firstChild );
-	chat_in.value = '';*/
+	showChatOutput(chat_in.value);
+	
+	chat_in.value = '';
 }
 
 function showChatOutput(m) {
 	var chat_out = document.getElementById("pubnub-chat-output");
   var newchat = document.createElement('div');
-	newChat.innerHTML = m;
+	newchat.innerHTML = "You: " + m;
   chat_out.insertBefore( newchat, chat_out.firstChild );
 }
