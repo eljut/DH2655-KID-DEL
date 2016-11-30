@@ -19,21 +19,40 @@ html, body {
 }
 
 .logo {
-  margin-left: 30px;
-  height: 70px;
-  margin-top: 10px;
+  margin-left: 15px;
+  height: 72px;
+  margin-top: 7px;
   margin-bottom: 5px;
 }
 
 .nav {
   background-color: white !important;
   height: 98px !important;
-  border-bottom: solid #22BD39 3pt;
+  border-bottom: solid #22BD39 5pt;
+}
+
+.navbar-brand {
+  margin-right: 0px !important;
 }
 
 .navbar-buttons {
-  padding-top: 25px;
-  font-size: 14pt;
+  margin-top: 20px;
+  font-family: 'Dosis Bold', 'Dosis';
+  font-style: normal;
+  font-size: 28px;
+}
+
+.navbutton {
+  margin-left: 50px !important;
+}
+
+a {
+  color: #797979;
+}
+
+.active {
+  color: #41AD34;
+  font-weight: 700;
 }
 
 .profile {

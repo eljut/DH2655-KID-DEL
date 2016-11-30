@@ -123,7 +123,7 @@ $("input[type='image']").click(function() {
 	var ctx = canvas.getContext('2d');
 	var color = document.querySelector(':checked').getAttribute('data-color');
 
-	canvas.width = Math.min(document.getElementById("whiteboard").clientWidth + 40, window.innerWidth || 300);
+	canvas.width = Math.min(document.getElementById("whiteboard").clientWidth + 45, window.innerWidth || 300);
 	canvas.height = Math.min(document.documentElement.clientHeight, window.innerHeight || 300);
 	
 	var whiteboarddiv = document.getElementById('whiteboard');
@@ -134,6 +134,11 @@ $("input[type='image']").click(function() {
 	var toolcol = document.getElementById('toolcolumn');
 	toolcol.setAttribute("style","height:500px");
 	toolcol.style.height = canvas.height + "px";
+
+	var chatbox = document.getElementById('chatbox');
+	chatbox.setAttribute("style","height:500px");
+	chatbox.style.height = canvas.height + "px";
+
 
 	ctx.strokeStyle = color;
 	ctx.lineWidth = '3';

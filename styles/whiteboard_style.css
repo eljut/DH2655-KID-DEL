@@ -51,9 +51,7 @@ body.alt2 {
 	padding-right: 0px !important;
 }
 
-#drawCanvas {
-	border: solid grey 1pt;
-}
+
 
 .grid {
 	background: url(http://wphooper.com/svg/examples/grid_pattern.png) left top repeat;
@@ -105,10 +103,32 @@ body.alt2 {
 }
 
 .toolcolumn {
-	background-color: #173863 ;
+	background-image: url("http://d26uhratvi024l.cloudfront.net/gsc/93R52S/f0/98/96/f098967866734e42b00da0f331ca4c68/images/profilpage/u58.jpg?token=e3a6726f69999874c27318feba2d01d3");
+	/*background-color: #173863 ;*/
+	background: -webkit-linear-gradient(270deg, rgba(41, 152, 184, 1) 0%, rgba(41, 152, 184, 1) 0%, rgba(23, 56, 99, 1) 86%, rgba(23, 56, 99, 1) 100%);
+    background: -moz-linear-gradient(180deg, rgba(41, 152, 184, 1) 0%, rgba(41, 152, 184, 1) 0%, rgba(23, 56, 99, 1) 86%, rgba(23, 56, 99, 1) 100%);
+    background: linear-gradient(180deg, rgba(41, 152, 184, 1) 0%, rgba(41, 152, 184, 1) 0%, rgba(23, 56, 99, 1) 86%, rgba(23, 56, 99, 1) 100%);
 	width: 70px;
 	position: relative;
 	
+}
+
+.background-overlay {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 70px;
+    background: -webkit-linear-gradient(270deg, rgba(41, 152, 184, 1) 0%, rgba(41, 152, 184, 1) 0%, rgba(23, 56, 99, 1) 86%, rgba(23, 56, 99, 1) 100%);
+    background: -moz-linear-gradient(180deg, rgba(41, 152, 184, 1) 0%, rgba(41, 152, 184, 1) 0%, rgba(23, 56, 99, 1) 86%, rgba(23, 56, 99, 1) 100%);
+    background: linear-gradient(180deg, rgba(41, 152, 184, 1) 0%, rgba(41, 152, 184, 1) 0%, rgba(23, 56, 99, 1) 86%, rgba(23, 56, 99, 1) 100%);
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(121, 121, 121, 1);
+    border-radius: 0px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 .toolbox {
@@ -187,7 +207,7 @@ body.alt2 {
 
 #notesymbol {
 	height: 60px;
-	bottom: 5px;
+	bottom: -10px;
 	margin-left: -10px;
 	position: absolute;
 }
@@ -247,11 +267,13 @@ body.alt2 {
 	display: none !important;
 }
 
-#vid-box {
+.videobox {
+	margin-top: 97px;
 }
 
 .profilepic {
 	height: 350px !important;
+	width: 400px;
 }
 
 .dropdown {
@@ -268,7 +290,6 @@ body.alt2 {
 }
 
 .chatbox {
-	margin-top: 100px;
 	text-align: center;
 	border: solid grey 1pt;
 	float: right;
