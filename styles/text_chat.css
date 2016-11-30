@@ -1,0 +1,32 @@
+#pubnub-chat-section {
+    margin: 0px;
+}
+#pubnub-chat-input {
+    width: 100%;
+    margin: 0px 0px 20px 0px;
+    outline: 0;
+    border: 0px;
+    border-bottom: 2px solid #eee;
+    font-size: 20px;
+    font-weight: 100;
+    font-family: "Helvetica Neue";
+}
+/* chat box output */
+#pubnub-chat-output {
+    text-align: left;
+    overflow: scroll;
+    overflow-x: hidden;
+    margin: 20px 0px 20px 0px;
+    height: 200px;
+    font-size: 14px;
+    font-weight: 200;
+    font-family: "Helvetica Neue";
+    outline: 0;
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+#pubnub-chat-output div {
+    margin: 8px 10px;
+    border-bottom: 1px solid #f8f8f8;
+}

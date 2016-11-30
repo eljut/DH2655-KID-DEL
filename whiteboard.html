@@ -22,6 +22,7 @@
   <link rel="stylesheet" type="text/css" href="styles/calStyle.css">
   <link rel="stylesheet" type="text/css" href="jquery.bxslider/jquery.bxslider.css" />
   <link rel="stylesheet" type="text/css" href="styles/drag_and_drop.css">
+  <link rel="stylesheet" type="text/css" href="styles/text_chat.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
 
@@ -250,12 +251,11 @@
     <div class="row" id="textchatbox">
     </div>
 
-<!--video chat room ends-->
-<!--
-    <div class="row">
-      <iframe src="https://friendlychat-dd071.firebaseapp.com" align="right" width="500" height="500"></iframe>
-    </div>
--->
+<!--video chat room ends-->    
+		<div id="pubnub-chat-section" class="text-center">
+			<input id="pubnub-chat-input" type="text" placeholder="chat here">
+			<div id="pubnub-chat-output"><div></div></div>
+		</div>
   </div>
 </div>
 
@@ -296,6 +296,7 @@
 <script src="scripts/whiteboard.js"></script>
 <script src="scripts/calMain.js"></script>
 <script src="scripts/drag_and_drop.js"></script>
+<script src="scripts/text_chat.js"></script>
 
 </body>
 </html>
