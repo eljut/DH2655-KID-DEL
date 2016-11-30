@@ -48,15 +48,13 @@
       <img class="tool penpic" id="pen-popover" src="images/penicon.png" alt="pen" data-toggle="popover">
       <img class="tool eraserpic" src="images/erasericon.png" alt="eraser" data-toggle="popover" data-content="And here's some amazing content. It's very engaging. Right?">
       <img class="tool" id="color-popover" src="images/color-symbol" alt="color" data-toggle="popover">
-      <!-- <img class="tool pipic" id="pisymbol" src="images/pi-symbol.png" alt="symbols"> -->
       <img class="tool calculatorpic" id="calculatoricon" src="images/calculator.png" alt="calculator">
       <input type="image" class="tool" id="imageupload" src="images/imageicon.png" alt="imageupload">
       <input type="file" id="imageLoader" name="imageLoader" style="display: none"/>
       <!-- <img class="tool trianglepic" src="images/triangle.png" alt="triangle" data-toggle="popover" data-content=""> -->
+      <img id="pisymbol" class="tool pipic" src="images/pi-symbol.png" alt="symbols" align="right">
 
     </div>
-    <!-- <img id="trianglesymbol" src="images/triangle.png" width="50" height="50" alt="shapes"> -->
-    <img id="pisymbol" class="tool" src="images/pi-symbol.png" alt="symbols" align="right">
     <img id="notesymbol" class="tool" src="images/scribble.png" alt="scribble">
   </div>
 
@@ -147,6 +145,16 @@
           </div>
         </div>
         <div id="subsymbolbox">
+          <div class="row">
+            <div class="col-md-2"><p class="circle" draggable="true" id="dragme25" ondragstart="drag_start(event)"></p></div>
+          </div>
+        </div>
+        <div id="subsymbolbox">
+          <div class="row">
+            <div class="col-md-2"><p class="square" draggable="true" id="dragme27" ondragstart="drag_start(event)"></p></div>
+          </div>
+        </div>
+        <div id="subsymbolbox">
           <div class="col-md-12" align="top">
             <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme1" ondragstart="drag_start(event)">+</span></div>
             <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme2" ondragstart="drag_start(event)">-</span></div>
@@ -162,12 +170,16 @@
             <div class="col-md-1"><p class="pi" draggable="true" id="dragme12" ondragstart="drag_start(event)"></p></div>
           </div>
         </div>
-        <!-- <div id="subshapebox">
+        <div id="subsymbolbox">
           <div class="row">
-            <div class="col-md-2"><p class="square" draggable="true" id="dragme25" ondragstart="drag_start(event)"></p></div>
+            <div class="col-md-2"><p class="rec_triangle" draggable="true" id="dragme28" ondragstart="drag_start(event)"></p></div>
+          </div>
+        </div>
+        <div id="subsymbolbox">
+          <div class="row">
             <div class="col-md-2"><p class="triangle" draggable="true" id="dragme26" ondragstart="drag_start(event)"></p></div>
           </div>
-        </div> -->
+        </div>
       </div>
     </div>
 

@@ -123,6 +123,7 @@ body.alt2 {
 
 .pipic {
 	height: 30px !important;
+	transform: translate(50%,0);
 }
 
 .thickness {
