@@ -44,7 +44,7 @@ function publishMessage() {
 function showChatOutput(m) {
 	var chat_out = document.getElementById("pubnub-chat-output");
   var newchat = document.createElement('div');
-	if (sessionStorage.getItem('username') != null) {
+	if (sessionStorage.getItem('username') != null && sessionStorage.getItem('username') != '') {
 		newchat.innerHTML = sessionStorage.getItem('username') + ": " + m;
 	}	else {
 		newchat.innerHTML = "You: " + m;
