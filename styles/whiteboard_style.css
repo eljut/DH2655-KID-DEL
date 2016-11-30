@@ -191,6 +191,13 @@ body.alt2 {
 	position: absolute;
 }
 
+#pisymbol {
+	height: 60px;
+	bottom: 70px;
+	margin-left: -15px;
+	position: absolute;
+}
+
 #notethumb {
 	height: 100px;
 }
@@ -441,4 +448,4 @@ header div {
 	.github {
 		display: block;
 	}
-}	
+}

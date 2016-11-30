@@ -1,17 +1,84 @@
-#board {
-    float: left;
-    width: 1000px;
-    height: 400px;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid black;
+#symbolbox {
+	display: none;
+	position: absolute; 
+	bottom: 0;
+	background-color: white;
+	width: 97%;
 }
-aside,img { 
+
+#innersymbolbox {
+	border: solid grey 1pt;
+	padding: 20px;
+	border-radius: 20px;
+}
+
+#subsymbolbox {
+	display: inline-block;
+	padding: 20px;
+	border-right: solid grey 1pt;
+}
+
+.symbol_text { 
     position:  absolute;
     left: 0;
-    top: 0; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
-    width: 20px; 
-    background: rgba(255,255,255,0.66); 
-    border: 2px  solid rgba(0,0,0,0.5); 
+    top: 0;  /*set these so Chrome doesn't return 'auto' from getComputedStyle */
+    font-size: 30px;
+    width: 30px; 
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+	vertical-align: middle; 
+    background: rgba(255,255,255,0); 
+    /*border-style: solid;*/
+}
+
+/*.pi { 
+    position:  absolute;
+    left: 0;
+    top: 0; /* set these so Chrome doesn't return 'auto' from getComputedStyle
+    width: 30px; 
+    height: 30px; 
+    background: rgba(255,255,255,0); 
+    background-image: url("../images/pi.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; 
     border-radius: 4px; padding: 8px;
+}*/
+
+.pi { 
+    position:  absolute;
+    left: 0;
+    top: 0;
+    width: 30px; 
+    height: 30px; 
+    background: rgba(255,255,255,0); 
+    background-image: url("../images/pi.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+.square_root { 
+    position:  absolute;
+    left: 0;
+    top: 0;
+    width: 30px; 
+    height: 30px; 
+    background: rgba(255,255,255,0); 
+    background-image: url("../images/square_root.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+.square { 
+    position:  absolute;
+    left: 0;
+    top: 0;
+    width: 30px; 
+    height: 30px; 
+    /*background: rgba(255,255,255,0); */
+    background-image: url("../images/square.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; 
 }

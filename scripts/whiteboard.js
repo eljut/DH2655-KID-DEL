@@ -4,6 +4,7 @@
 // });
 
 var notediv = false;
+var symboldiv = false;
 
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -43,6 +44,18 @@ $("#notesymbol").click(function(){
 	}
 });
 
+<<<<<<< Updated upstream
+=======
+$("#pisymbol").click(function(){
+	if (symboldiv == false) {
+		document.getElementById("symbolbox").style.display = "inline";
+		symboldiv = true;
+	} else {
+		$("#symbolbox").hide();
+		symboldiv = false;
+	}
+});
+>>>>>>> Stashed changes
 
 $("#calculatoricon").click(function(){
 	console.log("calculator activated");
@@ -72,7 +85,12 @@ $("#save").click(function() {
 
 $(document).mouseup(function (e)
 {
+<<<<<<< Updated upstream
     var notebox = $("#noteslider");
+=======
+    var notebox = $("#notebox");
+    var symbolbox = $("#symbolbox");
+>>>>>>> Stashed changes
     var notebutton = $("#notesymbol");
 
     if (!notebox.is(e.target) && !notebutton.is(e.target)// if the target of the click isn't the container...
@@ -81,6 +99,12 @@ $(document).mouseup(function (e)
         notebox.addClass("hideNoteslider");//hide();
         notebox.removeClass("showNoteslider");
         notediv = false;
+    }
+    if (!symbolbox.is(e.target) // if the target of the click isn't the container...
+        && symbolbox.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        symbolbox.hide();
+        symboldiv = false;
     }
 });
 
