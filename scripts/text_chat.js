@@ -1,11 +1,11 @@
-
+/*
 var pubnub = PUBNUB.init({
     publish_key: 'pub-c-71ef7cc3-cbba-4681-a7a0-0f04c90d2ece',
     subscribe_key: 'sub-c-baf5124e-b619-11e6-b697-0619f8945a4f',
     error: function (error) {
         console.log('Error:', error);
     }
-});
+});*/
 /*console.log('pubnub initialized');
 
 pubnub.subscribe({
