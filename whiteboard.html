@@ -48,87 +48,106 @@
       <img class="tool penpic" id="pen-popover" src="images/penicon.png" alt="pen" data-toggle="popover">
       <img class="tool eraserpic" src="images/erasericon.png" alt="eraser" data-toggle="popover" data-content="And here's some amazing content. It's very engaging. Right?">
       <img class="tool" id="color-popover" src="images/color-symbol" alt="color" data-toggle="popover">
-      <img class="tool trianglepic" src="images/triangle.png" alt="triangle" data-toggle="popover" data-content="And here's some amazing content. It's very engaging. Right?">
+      <!-- <img class="tool pipic" id="pisymbol" src="images/pi-symbol.png" alt="symbols"> -->
       <img class="tool calculatorpic" id="calculatoricon" src="images/calculator.png" alt="calculator">
       <input type="image" class="tool" id="imageupload" src="images/imageicon.png" alt="imageupload">
       <input type="file" id="imageLoader" name="imageLoader" style="display: none"/>
+      <!-- <img class="tool trianglepic" src="images/triangle.png" alt="triangle" data-toggle="popover" data-content=""> -->
+
     </div>
-    <img id="notesymbol" src="images/scribble.png" alt="scribble">
-    <img id="pisymbol" src="images/pi-symbol.png" alt="pi">
+    <!-- <img id="trianglesymbol" src="images/triangle.png" width="50" height="50" alt="shapes"> -->
+    <img id="pisymbol" class="tool" src="images/pi-symbol.png" alt="symbols" align="right">
+    <img id="notesymbol" class="tool" src="images/scribble.png" alt="scribble">
   </div>
 
   <!-- Whiteboard -->
   <div class="col-md-8" id="whiteboard" ondragover="drag_over(event)" ondrop="drop(event)">
     <canvas id="drawCanvas" width="300" height="300">Canvas is not supported on this browser!</canvas>
 
-      <div id="colorSwatch" class="hidden">
-        <input type="radio" name="color" id="color01" data-color="black" checked><label for="color01"></label> 
-        <input type="radio" name="color" id="color02" data-color="blue">  <label for="color02"></label>  
-        <input type="radio" name="color" id="color03" data-color="red">    <label for="color03"></label>  
-        <input type="radio" name="color" id="color04" data-color="yellowgreen"> <label for="color04"></label>  
-        <input type="radio" name="color" id="color05" data-color="gold"> <label for="color05"></label> 
-      </div>
+    <div id="colorSwatch" class="hidden">
+      <input type="radio" name="color" id="color01" data-color="black" checked><label for="color01"></label> 
+      <input type="radio" name="color" id="color02" data-color="blue">  <label for="color02"></label>  
+      <input type="radio" name="color" id="color03" data-color="red">    <label for="color03"></label>  
+      <input type="radio" name="color" id="color04" data-color="yellowgreen"> <label for="color04"></label>  
+      <input type="radio" name="color" id="color05" data-color="gold"> <label for="color05"></label> 
+    </div>
 
-      <div id="thickness" class="thickness hidden"> 
-        <div class="circle20"></div>
-        <div class="circle10"></div>
-        <div class="circle5"></div>
-        <div class="circle3"></div>
-        <div class="circle1"></div>
-      </div>
+    <div id="thickness" class="thickness hidden"> 
+      <div class="circle20"></div>
+      <div class="circle10"></div>
+      <div class="circle5"></div>
+      <div class="circle3"></div>
+      <div class="circle1"></div>
+    </div>
       
-      <div class="canvastools">
-        <a id="download">
-          <img class="download-icon" src="images/downloadicon.png" alt="download">
-        </a>
-        <a id="save">
-          <img class="save-icon" src="images/saveicon.png" alt="save">
-        </a>
+    <div class="canvastools">
+      <a id="download">
+        <img class="download-icon" src="images/downloadicon.png" alt="download">
+      </a>
+      <a id="save">
+        <img class="save-icon" src="images/saveicon.png" alt="save">
+      </a>
+    </div>
+
+    <div id="canvas-saved">
+      Anteckningar sparade!
+    </div>
+
+    <div id="papertype">
+      <img class="papertype" id="gridtype" src="images/gridicon.png" alt="grid">
+      <img class="papertype" id="nongridtype" src="images/nongridicon.png" alt="grid">
+    </div>
+
+    <div id="calculator">
+
+      <img src="images/closebutton.png" alt="close" id="closecalc">
+    <!-- Screen and clr key -->
+      <div class="top">
+        <span class="clear">C</span>
+        <div class="screen"></div>
       </div>
 
-      <div id="canvas-saved">
-        Anteckningar sparade!
+      <div class="keys">
+      <!-- Ops and keys -->
+        <span>7</span>
+        <span>8</span>
+        <span>9</span>
+        <span class="operator">+</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span class="operator">-</span>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span class="operator">/</span>
+        <span>0</span>
+        <span>.</span>
+        <span class="eval">=</span>
+        <span class="operator">x</span>
       </div>
-
-      <div id="papertype">
-        <img class="papertype" id="gridtype" src="images/gridicon.png" alt="grid">
-        <img class="papertype" id="nongridtype" src="images/nongridicon.png" alt="grid">
-      </div>
-
-      <div id="calculator">
-
-        <img src="images/closebutton.png" alt="close" id="closecalc">
-      <!-- Screen and clr key -->
-        <div class="top">
-          <span class="clear">C</span>
-          <div class="screen"></div>
-        </div>
-
-        <div class="keys">
-        <!-- Ops and keys -->
-          <span>7</span>
-          <span>8</span>
-          <span>9</span>
-          <span class="operator">+</span>
-          <span>4</span>
-          <span>5</span>
-          <span>6</span>
-          <span class="operator">-</span>
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-          <span class="operator">/</span>
-          <span>0</span>
-          <span>.</span>
-          <span class="eval">=</span>
-          <span class="operator">x</span>
-        </div>
-      </div>
+    </div>
 
     <div id="symbolbox">
       <div id="innersymbolbox">
         <div id="subsymbolbox">
-          <div class="row">
+          <div class="col-md-12">
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme13" ondragstart="drag_start(event)">1</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme14" ondragstart="drag_start(event)">2</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme15" ondragstart="drag_start(event)">3</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme16" ondragstart="drag_start(event)">4</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme17" ondragstart="drag_start(event)">5</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme18" ondragstart="drag_start(event)">6</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme19" ondragstart="drag_start(event)">7</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme20" ondragstart="drag_start(event)">8</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme21" ondragstart="drag_start(event)">9</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme22" ondragstart="drag_start(event)">0</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme23" ondragstart="drag_start(event)">x</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme24" ondragstart="drag_start(event)">y</span></div>
+          </div>
+        </div>
+        <div id="subsymbolbox">
+          <div class="col-md-12" align="top">
             <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme1" ondragstart="drag_start(event)">+</span></div>
             <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme2" ondragstart="drag_start(event)">-</span></div>
             <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme3" ondragstart="drag_start(event)">×</span></div>
@@ -143,86 +162,67 @@
             <div class="col-md-1"><p class="pi" draggable="true" id="dragme12" ondragstart="drag_start(event)"></p></div>
           </div>
         </div>
-        <div id="subsymbolbox">
+        <!-- <div id="subshapebox">
           <div class="row">
-            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme13" ondragstart="drag_start(event)">1</span></div>
-            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme14" ondragstart="drag_start(event)">2</span></div>
-            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme15" ondragstart="drag_start(event)">3</span></div>
-            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme16" ondragstart="drag_start(event)">4</span></div>
-            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme17" ondragstart="drag_start(event)">5</span></div>
-            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme18" ondragstart="drag_start(event)">6</span></div>
-            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme19" ondragstart="drag_start(event)">7</span></div>
-            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme20" ondragstart="drag_start(event)">8</span></div>
-            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme21" ondragstart="drag_start(event)">9</span></div>
-            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme22" ondragstart="drag_start(event)">0</span></div>
-            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme21" ondragstart="drag_start(event)">x</span></div>
-            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme22" ondragstart="drag_start(event)">y</span></div>
+            <div class="col-md-2"><p class="square" draggable="true" id="dragme25" ondragstart="drag_start(event)"></p></div>
+            <div class="col-md-2"><p class="triangle" draggable="true" id="dragme26" ondragstart="drag_start(event)"></p></div>
           </div>
-        </div>
-        <div id="subsymbolbox">
-          <div class="row">
-            <div class="col-md-2"><p class="square" draggable="true" id="dragme23" ondragstart="drag_start(event)"></p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-      
-      <div id="notebox">
-        <div id="innernotebox">
-          <div id="dailyNote">
-            <div class="row">Idag</div>
-            <div class="row">
-              <img id="notethumb" src="images/scribble.png" alt="scribble">
-              <img id="notethumb" src="images/scribble.png" alt="scribble">
-              <img id="notethumb" src="images/scribble.png" alt="scribble">
-            </div>
-          </div>
-          <div id="dailyNote">
-            <div class="row">26-11-16</div>
-            <div class="row">
-              <img id="notethumb" src="images/scribble.png" alt="scribble">
-              <img id="notethumb" src="images/scribble.png" alt="scribble">
-              <img id="notethumb" src="images/scribble.png" alt="scribble">
-            </div>
-          </div>
-          <img id="next-button" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-128.png"></img>
-        </div>
-      </div>
-      <div id="noteslider" class="hideNoteslider">
-        <div class="bxslider">
-          <div class="slidercontent">
-            Idag
-            <img src="images/scribble.png" id="notethumb">
-          </div>
-          <div class="slidercontent">
-            <br>
-            <img src="images/scribble.png" id="notethumb">
-          </div>
-          <div class="slidercontent">
-            <br>
-            <img src="images/scribble.png" id="notethumb">
-          </div>
-          <div class="slidercontent notedivider"></div>
-          <div class="slidercontent">
-            26-11-16
-            <img src="images/scribble.png" id="notethumb">
-          </div>
-          <div class="slidercontent">
-            <br>
-            <img src="images/scribble.png" id="notethumb">
-          </div>
-          <div class="slidercontent">
-            <br>
-            <img src="images/scribble.png" id="notethumb">
-          </div>
-          <div class="slidercontent notedivider"></div>
-        </div>
+        </div> -->
       </div>
     </div>
 
-    
-
-
+    <div id="notebox">
+      <div id="innernotebox">
+        <div id="dailyNote">
+          <div class="row">Idag</div>
+          <div class="row">
+            <img id="notethumb" src="images/scribble.png" alt="scribble">
+            <img id="notethumb" src="images/scribble.png" alt="scribble">
+            <img id="notethumb" src="images/scribble.png" alt="scribble">
+          </div>
+        </div>
+        <div id="dailyNote">
+          <div class="row">26-11-16</div>
+          <div class="row">
+            <img id="notethumb" src="images/scribble.png" alt="scribble">
+            <img id="notethumb" src="images/scribble.png" alt="scribble">
+            <img id="notethumb" src="images/scribble.png" alt="scribble">
+          </div>
+        </div>
+        <img id="next-button" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-128.png"></img>
+      </div>
+    </div>
+    <div id="noteslider" class="hideNoteslider">
+      <div class="bxslider">
+        <div class="slidercontent">
+          Idag
+          <img src="images/scribble.png" id="notethumb">
+        </div>
+        <div class="slidercontent">
+          <br>
+          <img src="images/scribble.png" id="notethumb">
+        </div>
+        <div class="slidercontent">
+          <br>
+          <img src="images/scribble.png" id="notethumb">
+        </div>
+        <div class="slidercontent notedivider"></div>
+        <div class="slidercontent">
+          26-11-16
+          <img src="images/scribble.png" id="notethumb">
+        </div>
+        <div class="slidercontent">
+          <br>
+          <img src="images/scribble.png" id="notethumb">
+        </div>
+        <div class="slidercontent">
+          <br>
+          <img src="images/scribble.png" id="notethumb">
+        </div>
+        <div class="slidercontent notedivider"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- Chat -->
   <div class="col-md-3 chatbox">

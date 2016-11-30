@@ -18,14 +18,15 @@
 	border-right: solid grey 1pt;
 }
 
+
 .symbol_text { 
-    position:  absolute;
+    position: absolute;
     left: 0;
     top: 0;  /*set these so Chrome doesn't return 'auto' from getComputedStyle */
     font-size: 30px;
     width: 30px; 
     height: 30px;
-    line-height: 30px;
+    line-height: 0px;
     text-align: center;
 	vertical-align: middle; 
     background: rgba(255,255,255,0); 
@@ -51,7 +52,8 @@
     left: 0;
     top: 0;
     width: 30px; 
-    height: 30px; 
+    height: 30px;
+    /*line-height: 10px;*/
     background: rgba(255,255,255,0); 
     background-image: url("../images/pi.png");
     background-size: contain;
@@ -70,12 +72,13 @@
     background-repeat: no-repeat;
     background-position: center; 
 }
+
 .square { 
     position:  absolute;
     left: 0;
     top: 0;
-    width: 30px; 
-    height: 30px; 
+    width: 100px; 
+    height: 100px; 
     /*background: rgba(255,255,255,0); */
     background-image: url("../images/square.png");
     background-size: contain;
