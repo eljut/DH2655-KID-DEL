@@ -44,8 +44,6 @@ $("#notesymbol").click(function(){
 	}
 });
 
-<<<<<<< Updated upstream
-=======
 $("#pisymbol").click(function(){
 	if (symboldiv == false) {
 		document.getElementById("symbolbox").style.display = "inline";
@@ -55,7 +53,6 @@ $("#pisymbol").click(function(){
 		symboldiv = false;
 	}
 });
->>>>>>> Stashed changes
 
 $("#calculatoricon").click(function(){
 	console.log("calculator activated");
@@ -85,12 +82,9 @@ $("#save").click(function() {
 
 $(document).mouseup(function (e)
 {
-<<<<<<< Updated upstream
     var notebox = $("#noteslider");
-=======
-    var notebox = $("#notebox");
+    // var notebox = $("#notebox");
     var symbolbox = $("#symbolbox");
->>>>>>> Stashed changes
     var notebutton = $("#notesymbol");
 
     if (!notebox.is(e.target) && !notebutton.is(e.target)// if the target of the click isn't the container...
