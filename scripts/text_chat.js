@@ -45,5 +45,6 @@ function showChatOutput(m) {
 	var chat_out = document.getElementById("pubnub-chat-output");
   var newchat = document.createElement('div');
 	newchat.innerHTML = "You: " + m;
-  chat_out.insertBefore( newchat, chat_out.firstChild );
+  chat_out.appendChild( newchat );
+  chat_out.scrollTop = chat_out.scrollHeight;
 }
