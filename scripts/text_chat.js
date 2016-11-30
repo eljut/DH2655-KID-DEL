@@ -44,7 +44,11 @@ function publishMessage() {
 function showChatOutput(m) {
 	var chat_out = document.getElementById("pubnub-chat-output");
   var newchat = document.createElement('div');
-	newchat.innerHTML = "You: " + m;
+	if (sessionStorage.getItem('username') != null) {
+		newchat.innerHTML = sessionStorage.getItem('username') + ": " + m;
+	}	else {
+		newchat.innerHTML = "You: " + m;
+	}
   chat_out.appendChild( newchat );
   chat_out.scrollTop = chat_out.scrollHeight;
 }
