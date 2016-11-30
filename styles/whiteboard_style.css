@@ -85,6 +85,15 @@ body.alt2 {
 	position: absolute;
 }
 
+#canvas-saved {
+	display: none;
+	position: absolute;
+	font-size: 30pt;
+	width: 100%;
+	text-align: center;
+	margin-top: 200px;
+}
+
 #papertype {
 	margin-top: 100px;
 	text-align: right;

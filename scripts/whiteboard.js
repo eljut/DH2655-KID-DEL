@@ -64,6 +64,12 @@ $("#nongridtype").click(function(){
 	$("#drawCanvas").removeClass("grid");
 });
 
+$("#save").click(function() {
+	console.log("saving whiteboard");
+	document.getElementById("canvas-saved").style.display = "block";
+	$("#canvas-saved").delay(1000).hide(0);
+});
+
 $(document).mouseup(function (e)
 {
     var notebox = $("#noteslider");
@@ -86,6 +92,10 @@ $(document).ready(function(){
     slideMargin: 5,
     caption: true
   });
+});
+
+$("input[type='image']").click(function() {
+    $("input[id='imageLoader']").click();
 });
 
 (function() {
@@ -221,6 +231,26 @@ $(document).ready(function(){
 	  	plots = [];
 	}
 
+	//FOR UPLOADING IMAGES
+
+	var imageLoader = document.getElementById('imageLoader');
+    imageLoader.addEventListener('change', handleImage, false);
+
+    function handleImage(e){
+    	console.log("uploading image");
+	    var reader = new FileReader();
+	    reader.onload = function(event){
+	        var img = new Image();
+	        img.onload = function(){
+	            img.width = 200;
+	            img.height = 200;
+	            ctx.drawImage(img,200,200);
+	    	}	
+	    	img.src = event.target.result;
+	    }
+	    reader.readAsDataURL(e.target.files[0]);     
+	}
+
 	//FOR PASTING OF IMAGE ONTO CANVAS
 
 	window.addEventListener("paste", pasteHandler); //chrome
@@ -236,6 +266,7 @@ function pasteHandler(e){
         var blob = items[i].getAsFile();
         var URLObj = window.URL || window.webkitURL;
         var source = URLObj.createObjectURL(blob);
+        //$("#whiteboard").append("<img src='"+source+"' alt='pastedimage'></img>");
         paste_createImage(source);
         }
 	}
@@ -243,7 +274,7 @@ function pasteHandler(e){
 function paste_createImage(source){
 	var pastedImage = new Image();
 	pastedImage.onload = function(){
-        ctx.drawImage(pastedImage, 0, 0);
+        ctx.drawImage(pastedImage, 50, 200);
 		}
 	pastedImage.src = source;
 	}

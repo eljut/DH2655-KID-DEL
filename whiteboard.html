@@ -49,6 +49,8 @@
       <img class="tool trianglepic" src="images/triangle.png" alt="triangle" data-toggle="popover" data-content="And here's some amazing content. It's very engaging. Right?">
       <img class="tool pipic" src="images/pi-symbol.png" alt="pi" data-toggle="popover" data-content="And here's some amazing content. It's very engaging. Right?">
       <img class="tool calculatorpic" id="calculatoricon" src="images/calculator.png" alt="calculator">
+      <input type="image" class="tool" id="imageupload" src="images/imageicon.png" alt="imageupload">
+      <input type="file" id="imageLoader" name="imageLoader" style="display: none"/>
     </div>
     <img id="notesymbol" src="images/scribble.png" alt="scribble">
   </div>
@@ -64,7 +66,7 @@
         <input type="radio" name="color" id="color02" data-color="blue">  <label for="color02"></label>  
         <input type="radio" name="color" id="color03" data-color="red">    <label for="color03"></label>  
         <input type="radio" name="color" id="color04" data-color="yellowgreen"> <label for="color04"></label>  
-        <input type="radio" name="color" id="color05" data-color="gold"> <label for="color05"></label>  
+        <input type="radio" name="color" id="color05" data-color="gold"> <label for="color05"></label> 
       </div>
 
       <div id="thickness" class="thickness hidden"> 
@@ -82,6 +84,10 @@
         <a id="save">
           <img class="save-icon" src="images/saveicon.png" alt="save">
         </a>
+      </div>
+
+      <div id="canvas-saved">
+        Anteckningar sparade!
       </div>
 
       <div id="papertype">
