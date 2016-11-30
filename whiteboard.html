@@ -238,8 +238,10 @@
 
   <!-- Chat -->
   <div class="col-md-3 chatbox">
-    <div class="row" id="vid-box">
-      <img class="profilepic" src="http://eadb.org/wp-content/uploads/2015/08/profile-placeholder.jpg" alt="profile placeholder">
+    <div class="row">
+			<img src="images/closebutton.png" id="hangup" style="display: none;" alt="hangup">
+			<video id="vid-box" style="z-index: 2;" width="350" height="350" autoplay></video>
+      <img id="profilepicture" class="profilepic" src="http://eadb.org/wp-content/uploads/2015/08/profile-placeholder.jpg" alt="profile placeholder">
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle callmenu" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Tutor
@@ -250,7 +252,7 @@
           <a class="dropdown-item" href="#">Friend 1</a>
           <a class="dropdown-item" href="#">Friend 2</a>
         </div>
-        <button class="btn btn-primary callbutton" type="button" name="loginForm" id="login">Call</button>
+        <button class="btn btn-primary callbutton" type="button" name="loginForm" id="login" onclick="makeCall()">Call</button>
       </div>
       <!-- <form name="loginForm" id="login" action="#" onsubmit="return login(this);">
         <input type="text" name="username" id="username" placeholder="Pick a username!" />
@@ -311,6 +313,7 @@
 <script src="scripts/calMain.js"></script>
 <script src="scripts/drag_and_drop.js"></script>
 <script src="scripts/text_chat.js"></script>
+<script src="scripts/video_call.js"></script>
 
 </body>
 </html>
