@@ -169,7 +169,7 @@ function connected(session) {
     PUBNUB.$('number').value = ''+session.number;
     sounds.play('sound/hi');
     console.log("Hi!");
-    $('#self-video').append(phone.video);
+    PUBNUB.$('#self-video').append(phone.video);
 }
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
