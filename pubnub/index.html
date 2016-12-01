@@ -51,8 +51,8 @@
                         </div>
                     </div>
                     <div id="pubnub-relative">
-                        <div id="video-thumbnail"></div>
-                        <video id="self-video" width="160" height="120" autoplay></video>
+                        <!-- <div id="video-thumbnail"></div> -->
+                        <video id="self-video" width="160" height="120" style="position: absolute; top: 300; left: 800" autoplay></video>
                         <!-- <div id="pubnub-logo">
                             <div id="pubnub-logo-img"></div>
                         </div> -->
@@ -155,7 +155,7 @@ function urlstring(params) {
 // Calling & Answering Service
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 var video_out = PUBNUB.$('video-display');
-var img_out   = PUBNUB.$('video-thumbnail');
+// var img_out   = PUBNUB.$('video-thumbnail');
 var img_self  = PUBNUB.$('video-self');
 
 
