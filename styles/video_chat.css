@@ -1,5 +1,11 @@
 #vid-box {
 	display: none;
+	width: 358px;
+	background-image: url("http://d26uhratvi024l.cloudfront.net/gsc/93R52S/f0/98/96/f098967866734e42b00da0f331ca4c68/images/profilpage/u58.jpg?token=e3a6726f69999874c27318feba2d01d3");
+	/*background-color: #173863 ;*/
+	background: -webkit-linear-gradient(270deg, rgba(41, 152, 184, 1) 0%, rgba(41, 152, 184, 1) 0%, rgba(23, 56, 99, 1) 86%, rgba(23, 56, 99, 1) 100%);
+    background: -moz-linear-gradient(180deg, rgba(41, 152, 184, 1) 0%, rgba(41, 152, 184, 1) 0%, rgba(23, 56, 99, 1) 86%, rgba(23, 56, 99, 1) 100%);
+    background: linear-gradient(180deg, rgba(41, 152, 184, 1) 0%, rgba(41, 152, 184, 1) 0%, rgba(23, 56, 99, 1) 86%, rgba(23, 56, 99, 1) 100%);
 }
 
 #hangup {
@@ -10,5 +16,6 @@
 }
 
 .dropdown{
-	width: 200px;
+	padding: 8px;
+	padding-right: 15px;
 }
