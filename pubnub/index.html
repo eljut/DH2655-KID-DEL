@@ -52,7 +52,7 @@
                     </div>
                     <div id="pubnub-relative">
                         <div id="video-thumbnail"></div>
-                        <video id="self-video" autoplay></video>
+                        <video id="self-video" width="160" height="120" autoplay></video>
                         <!-- <div id="pubnub-logo">
                             <div id="pubnub-logo-img"></div>
                         </div> -->
@@ -86,14 +86,20 @@
     </div>
 </div>
 
+<!-- Self-video -->
+<script type="text/javascript">
+var video = document.getElementById('video');
+if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    // Not adding `{ audio: true }` since we only want video now
+    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+        video.src = window.URL.createObjectURL(stream);
+        video.play();
+    });
+}
+</script>
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
 <!-- WebRTC Peer Connections -->
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
-<!-- IMPORTANT: THIS IS AN UNMINIFIED DEVELOPMENT PUBNUB LIBRARY
-    replace this with the latest versioned, minified CDN lib link before
-    you deploy your app to a production enviornment.
-    https://github.com/pubnub/javascript#cdn-links
--->
 <script src="https://cdn.pubnub.com/pubnub.min.js"></script>
 <script src="js/webrtc.js"></script>
 <script src="js/sound.js"></script>
@@ -152,6 +158,7 @@ var video_out = PUBNUB.$('video-display');
 var img_out   = PUBNUB.$('video-thumbnail');
 var img_self  = PUBNUB.$('video-self');
 
+
 var phone     = window.phone = PHONE({
     number        : my_number.number, // listen on this line
     publish_key   : 'pub-c-71ef7cc3-cbba-4681-a7a0-0f04c90d2ece',
@@ -169,7 +176,6 @@ function connected(session) {
     PUBNUB.$('number').value = ''+session.number;
     sounds.play('sound/hi');
     console.log("Hi!");
-    PUBNUB.$('#self-video').append(phone.video);
 }
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
