@@ -30,6 +30,22 @@
 
 </head>
 <body>
+  <script type="text/javascript">
+    function maxWin(){
+      var i = document.getElementById("vid-box");
+
+      // go full-screen
+      if (i.requestFullscreen) {
+      	i.requestFullscreen();
+      } else if (i.webkitRequestFullscreen) {
+      	i.webkitRequestFullscreen();
+      } else if (i.mozRequestFullScreen) {
+      	i.mozRequestFullScreen();
+      } else if (i.msRequestFullscreen) {
+      	i.msRequestFullscreen();
+      }
+    }
+  </script>
 <div class="nav navbar-nav navbar-fixed-top">
     <a class="navbar-brand" href="https://myacademy.se/">
       <img class="logo" src="images/MA_logga.png"/>
@@ -64,21 +80,21 @@
     <canvas id="drawCanvas" width="300" height="300">Canvas is not supported on this browser!</canvas>
 
     <div id="colorSwatch" class="hidden">
-      <input type="radio" name="color" id="color01" data-color="black" checked><label for="color01"></label> 
-      <input type="radio" name="color" id="color02" data-color="blue">  <label for="color02"></label>  
-      <input type="radio" name="color" id="color03" data-color="red">    <label for="color03"></label>  
-      <input type="radio" name="color" id="color04" data-color="yellowgreen"> <label for="color04"></label>  
-      <input type="radio" name="color" id="color05" data-color="gold"> <label for="color05"></label> 
+      <input type="radio" name="color" id="color01" data-color="black" checked><label for="color01"></label>
+      <input type="radio" name="color" id="color02" data-color="blue">  <label for="color02"></label>
+      <input type="radio" name="color" id="color03" data-color="red">    <label for="color03"></label>
+      <input type="radio" name="color" id="color04" data-color="yellowgreen"> <label for="color04"></label>
+      <input type="radio" name="color" id="color05" data-color="gold"> <label for="color05"></label>
     </div>
 
-    <div id="thickness" class="thickness hidden"> 
+    <div id="thickness" class="thickness hidden">
       <div class="circle20"></div>
       <div class="circle10"></div>
       <div class="circle5"></div>
       <div class="circle3"></div>
       <div class="circle1"></div>
     </div>
-      
+
     <div class="canvastools">
       <a id="download">
         <img class="download-icon" src="images/downloadicon.png" alt="download">
@@ -254,6 +270,7 @@
           <a class="dropdown-item" href="#">Friend 2</a>
         </div>
         <button class="btn btn-primary callbutton" type="button" name="loginForm" id="login" onclick="makeCall()">Call</button>
+        <button onclick="maxWin()">fc</button>
       </div>
       <!-- <form name="loginForm" id="login" action="#" onsubmit="return login(this);">
         <input type="text" name="username" id="username" placeholder="Pick a username!" />
@@ -272,12 +289,9 @@
 			</div>
     </div>
 
-<!--video chat room ends-->    
+<!--video chat room ends-->
   </div>
 </div>
-
-
-
 
 <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
 <script>
