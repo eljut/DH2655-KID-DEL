@@ -1,0 +1,10 @@
+.container {
+  width: 100vw;
+}
+
+#ui-profile {
+  background-image: url('../img/bg.jpg');
+  background-size:cover;
+  width: 100vw;
+  min-height: 600px;
+}
