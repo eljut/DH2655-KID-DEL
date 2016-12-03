@@ -17,7 +17,7 @@ html{
 .userContent{
   background-image: url("../img/bg.jpg");
   background-size: 100%;
-  height: 80vh;
+  height:100vh;
   width: 100vw;
   padding: 0px;
   margin: 0px;
@@ -55,10 +55,10 @@ html{
 }
 
 .setFooter {
-  margin-left: 12vw;
   height: 5vh;
-  width: 20vw;
+  width: 10vw;
   margin-top: 20px;
+  float: right;
 }
 
 .navbar {
