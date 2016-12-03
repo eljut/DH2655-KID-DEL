@@ -48,8 +48,7 @@ select {
 
 .theFooter {
   border-top: thick solid #41ad34;
-  max-height: 88px;
-  height: 88px;
+  padding: 0px;
 }
 
 .setFooter {
