@@ -212,9 +212,9 @@ body.alt2 {
 }
 
 #notesymbol {
-	height: 60px;
+	/*height: 60px;*/
 	bottom: -10px;
-	margin-left: -10px;
+	/*margin-left: -10px;*/
 	position: absolute;
 }
 
@@ -278,6 +278,10 @@ body.alt2 {
 }
 
 .profilepic {
+<<<<<<< HEAD
+	height: 350px !important;
+	width: 350px;
+=======
 
 	margin-right: auto;
 	margin-left: auto;
@@ -285,6 +289,7 @@ body.alt2 {
 	height: 200px;
 	margin-top: 40px;
 	border-radius: 25px;
+>>>>>>> origin/master
 }
 
 .dropdown {
@@ -303,7 +308,7 @@ body.alt2 {
 .chatbox {
 	overflow-y: scroll; 
 	text-align: center;
-	border: solid grey 1pt;
+	border: solid #1C4F78 1pt;
 	float: right;
 	background-image: url("http://d26uhratvi024l.cloudfront.net/gsc/93R52S/f0/98/96/f098967866734e42b00da0f331ca4c68/images/profilpage/u58.jpg?token=e3a6726f69999874c27318feba2d01d3");
 	/*background-color: #173863 ;*/
