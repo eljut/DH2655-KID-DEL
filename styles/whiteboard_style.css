@@ -280,10 +280,9 @@ body.alt2 {
 .profilepic {
 	margin-right: auto;
 	margin-left: auto;
-	width: 270px;
-	height: 200px;
-	margin-top: 40px;
-	border-radius: 25px;
+	height: 180px;
+	margin-top: 20px;
+	border-radius: 100px;
 }
 
 .dropdown {
