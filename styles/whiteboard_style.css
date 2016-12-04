@@ -301,6 +301,7 @@ body.alt2 {
 }
 
 .chatbox {
+	overflow-y: scroll; 
 	text-align: center;
 	border: solid grey 1pt;
 	float: right;

@@ -116,9 +116,15 @@ $("input[type='image']").click(function() {
     $("input[id='imageLoader']").click();
 });
 
-$("#calendar-icon").click(function() {
-	var sessionInfo = document.getElementById("newSession");
-	sessionInfo.style.display = "none";
+// $("#calendar-icon").click(function() {
+// 	var sessionInfo = document.getElementById("newSession");
+// 	sessionInfo.style.display = "none";
+// });
+
+$(document).ready(function(){
+    $("#calendar-icon").click(function(){
+        $("#newSession").toggle();
+    });
 });
 
 // $("#textchat-icon").click(function() {
