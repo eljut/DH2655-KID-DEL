@@ -278,18 +278,12 @@ body.alt2 {
 }
 
 .profilepic {
-<<<<<<< HEAD
-	height: 350px !important;
-	width: 350px;
-=======
-
 	margin-right: auto;
 	margin-left: auto;
 	width: 270px;
 	height: 200px;
 	margin-top: 40px;
 	border-radius: 25px;
->>>>>>> origin/master
 }
 
 .dropdown {
