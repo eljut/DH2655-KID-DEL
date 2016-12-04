@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- <script src="css/profile.css"></script> -->
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/profile.css">
+</head>
+
+
+<!-- start of the body -->
+<body>
+
+  <!-- navbar starts -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid nav-border">
+      <div class="navbar-header setNavHeader">
+        <img src="img/logo.png" style="margin: 10px"></img>
+      </div>
+      <ul class="nav navbar-nav mainMenu">
+        <li class="active setNavHeader"><a href="#">Min profil</a></li>
+        <li class="setNavHeader"><a href="#">Boka</a></li>
+        <li class="setNavHeader"><a href="#">Klassrum</a></li>
+        <li class="setNavHeader"><a href="#">Quiz</a></li>
+      </ul>
+      <ul class="nav navbar-nav exit">
+        <li class="exitText"><a href="#">Logga ut</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- navbar ends -->
+
+
+
+<!-- <div class="container-fluid top">
+</div> -->
+
+
+
+
+
+
+  <!-- user content starts -->
+  <div class="container-fluid userContent">
+      <!-- Profile box starts -->
+      <div id="name_div">Pelle Fjant</div>
+        <div class="col-sm-4" id="profileCircle">
+          <img src="img/profileBg.png">
+          <img src="img/p1.png" id="profileImg"></img>
+          </img>
+          <div id="pokalContainer">
+            <img src="img/pokal.png" id="pokalImg"></img>
+          </div>
+        </div>
+        <!-- Profile box ends -->
+
+        <!-- Menu starts -->
+        <div class="col-sm-4" id="menuBox">
+          <div id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="card">
+              <div class="card-header" role="tab" id="headingOne">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Schedule
+                  </a>
+                </h5>
+              </div>
+              <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                  <p><img class="note" src="images/booking.png" width="10%" height="10%" alt="medal placeholder" align="left"> <br>1 hour Math session booked - Sunday 13 October 2016 </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" role="tab" id="headingTwo">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Homework
+                  </a>
+                </h5>
+              </div>
+              <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="card-block">
+                  Assignment 2 - Due on Monday 14 October 2016
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" role="tab" id="headingThree">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Notes
+                  </a>
+                </h5>
+              </div>
+              <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="card-block">
+                  <div class="notes">
+                    <img class="note" src="images/scribble.png" alt="medal placeholder">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" role="tab" id="headingFour">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    History
+                  </a>
+                </h5>
+              </div>
+              <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+                <div class="card-block">
+                    <table>
+                      <tr>
+                        <th>Event</th>
+                        <th>Date Modified</th>
+                      </tr>
+                      <tr>
+                        <td>1 hour Math session booked</td>
+                        <td>Saturday 7 October 2016</td>
+                      </tr>
+                      <tr>
+                        <td>Note</td>
+                        <td>Sunday 8 October 2016</td>
+                      </tr>
+                      <tr>
+                        <td>Assignment 2</td>
+                        <td>Sunday 8 October 2016</td>
+                      </tr>
+                    </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div id="menuItem4">
+            <img src="img/4.png" id="menu4Img"></img>
+            Anteckningar
+          </div> -->
+        </div>
+        <!-- Menu ends -->
+
+        <div class="col-sm-4">
+        </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <!-- footer content -->
+  <footer class="footer theFooter">
+    <div class="container-fluid">
+    <div class="col-sm-4 setFooter">
+      <img src="img/faq.png"></img>
+    </div>
+    <div class="col-sm-4 setFooter">
+      <img src="img/contact.png"></img>
+    </div>
+    <div class="col-sm-4 setFooter">
+      <img src="img/follow.png"></img>
+    </div>
+  </div>
+  </footer>
+</body>
+</html>

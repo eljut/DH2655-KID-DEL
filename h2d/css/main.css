@@ -29,9 +29,14 @@ body {
   width: 100vw;
   padding: 0px;
   margin: 0px;
+  top: 77px;
 }
 
-.mainMenu {
+.top{
+  height: : 77px;
+  min-height: 77px;
+  width: 100%;
+  display: block;
 }
 
 .exit {
@@ -120,6 +125,7 @@ body {
   border-radius: 0px;
   width: 100vw;
   height: 77px;
+  top: 0;
 }
 .navbar-default .navbar-brand {
   color: #173863;
