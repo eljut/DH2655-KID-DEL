@@ -77,6 +77,11 @@ body.alt2 {
 	margin-left: 5px;
 }
 
+.trash-icon {
+	height: 24px;
+	margin-top: -2px;
+}
+
 .canvastools {
 	margin-top: 103px;
 	float: left;
@@ -95,6 +100,7 @@ body.alt2 {
 #papertype {
 	margin-top: 100px;
 	text-align: right;
+	margin-right: -50px;
 }
 
 .papertype {
@@ -272,8 +278,13 @@ body.alt2 {
 }
 
 .profilepic {
-	height: 350px !important;
-	width: 400px;
+
+	margin-right: auto;
+	margin-left: auto;
+	width: 270px;
+	height: 200px;
+	margin-top: 40px;
+	border-radius: 25px;
 }
 
 .dropdown {
@@ -293,6 +304,15 @@ body.alt2 {
 	text-align: center;
 	border: solid grey 1pt;
 	float: right;
+	background-image: url("http://d26uhratvi024l.cloudfront.net/gsc/93R52S/f0/98/96/f098967866734e42b00da0f331ca4c68/images/profilpage/u58.jpg?token=e3a6726f69999874c27318feba2d01d3");
+	/*background-color: #173863 ;*/
+	background: -webkit-linear-gradient(270deg, rgba(41, 152, 184, 1) 0%, rgba(41, 152, 184, 1) 0%, rgba(23, 56, 99, 1) 86%, rgba(23, 56, 99, 1) 100%);
+    background: -moz-linear-gradient(180deg, rgba(41, 152, 184, 1) 0%, rgba(41, 152, 184, 1) 0%, rgba(23, 56, 99, 1) 86%, rgba(23, 56, 99, 1) 100%);
+    background: linear-gradient(180deg, rgba(41, 152, 184, 1) 0%, rgba(41, 152, 184, 1) 0%, rgba(23, 56, 99, 1) 86%, rgba(23, 56, 99, 1) 100%);
+}
+
+#textchatbox {
+	padding: 20px;
 }
 
 .popover {

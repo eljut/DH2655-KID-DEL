@@ -1,5 +1,14 @@
 #pubnub-chat-section {
     margin: 0px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    border: solid grey 2pt;
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: -30px;
 }
 #pubnub-chat-input {
     width: 90%;
@@ -30,4 +39,21 @@
 #pubnub-chat-output div {
     margin: 5px 5px;
     border-bottom: 1px solid #f8f8f8;
+}
+
+.bottomOptions {
+    margin-bottom: 40px;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.textIconDiv {
+    width: 50%;
+    text-align: left;
+}
+
+#textchat-icon {
+    height: 30px;
+    position: absolute;
 }
