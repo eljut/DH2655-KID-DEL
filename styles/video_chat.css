@@ -1,21 +1,105 @@
 #vid-box {
 	display: none;
-	width: 358px;
-	background-image: url("http://d26uhratvi024l.cloudfront.net/gsc/93R52S/f0/98/96/f098967866734e42b00da0f331ca4c68/images/profilpage/u58.jpg?token=e3a6726f69999874c27318feba2d01d3");
-	/*background-color: #173863 ;*/
-	background: -webkit-linear-gradient(270deg, rgba(41, 152, 184, 1) 0%, rgba(41, 152, 184, 1) 0%, rgba(23, 56, 99, 1) 86%, rgba(23, 56, 99, 1) 100%);
-    background: -moz-linear-gradient(180deg, rgba(41, 152, 184, 1) 0%, rgba(41, 152, 184, 1) 0%, rgba(23, 56, 99, 1) 86%, rgba(23, 56, 99, 1) 100%);
-    background: linear-gradient(180deg, rgba(41, 152, 184, 1) 0%, rgba(41, 152, 184, 1) 0%, rgba(23, 56, 99, 1) 86%, rgba(23, 56, 99, 1) 100%);
+	margin-right: auto;
+	margin-left: auto;
+	width: 80%;
+	height: 20%;
+	margin-top: 40px;
+}
+
+#your-vid-box {
+	display: none;
+	margin-right: auto;
+	margin-left: auto;
+	width: 50%;
+	height: 20%;
+	margin-top: 20px;
+}
+
+#friend1-vid-box {
+	display: none;
+	margin-right: auto;
+	margin-left: auto;
+	width: 50%;
+	height: 20%;
+	margin-top: 20px;
+}
+
+#yourpicture {
+	width: 130px;
+	height: 100px !important;
+}
+
+video {
+	border-radius: 25px !important;
+}
+
+.video {
+	text-align: center;
+	width: 100%;
+	padding-top: 1px;
 }
 
 #hangup {
 	display: none;
 	position: absolute;
-	margin-top: 50px;
+	margin: 5px;
+	height: 30px;
+	right: 0;
+}
+
+#fullscreen {
 	height: 20px;
+	margin: 5px;
+	position: absolute;
 }
 
 .dropdown{
 	padding: 8px;
 	padding-right: 15px;
+	display: none;
+}
+
+#newSession {
+	padding-top: 20px; 
+	border-top: solid white 1pt;
+	color: white;
+	margin-top: 20px;
+	font-size: 12pt;
+}
+
+.bookedTime {
+	color: yellow;
+	font-size: 14pt;
+}
+
+#start-session {
+	margin-top: 15px;
+	border-radius: 10px;
+	width: 270px;
+}
+
+.sessionInfo {
+	margin-top: 10px;
+	font-size: 10pt !important; 
+}
+
+.chosenCoach {
+	color: yellow;
+}
+
+.numberOfStudents {
+	color: yellow;
+}
+
+.calendarIconDiv {
+	text-align: right;
+	position: absolute;
+	display: inline-block;
+	width: 50%;
+}
+
+#calendar-icon {
+	height: 30px;
+	margin-right: 25px;
 }

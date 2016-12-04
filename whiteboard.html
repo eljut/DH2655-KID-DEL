@@ -101,6 +101,9 @@
       <a id="save">
         <img class="save-icon" src="images/saveicon.png" alt="save">
       </a>
+      <a id="trash">
+        <img class="trash-icon" src="images/trashicon.png" alt="trash">
+      </a>
     </div>
 
     <div id="canvas-saved">
@@ -250,14 +253,43 @@
         <div class="slidercontent notedivider"></div>
       </div>
     </div>
+
+     <!--<div class="row" id="textchatbox">-->
+      <div id="pubnub-chat-section" class="text-center">
+        <div id="pubnub-chat-output"><div></div></div>
+        <input id="pubnub-chat-input" type="text" placeholder="chat here">
+      </div>
+    <!--</div>-->
   </div>
 
   <!-- Chat -->
   <div class="col-md-3 chatbox" id="chatbox">
     <div class="row videobox">
+<<<<<<< HEAD
 			<img src="images/closebutton.png" id="hangup" style="display: none;" alt="hangup">
 			<video id="vid-box" style="z-index: 2;" width="350" height="350" autoplay></video>
       <img id="profilepicture" class="profilepic" src="images/profile-placeholder-myacademy.png" alt="profile placeholder">
+=======
+      <div>
+        <div style="text-align: left;">
+          <img src="images/fullscreen.png" id="fullscreen" onclick="maxWin()"></img>
+        </div>
+        <div>
+			     <img src="images/hangupicon.png" id="hangup" alt="hangup">
+        </div>
+      </div>
+      <div class="video">
+        <img id="profilepicture" class="profilepic" src="http://eadb.org/wp-content/uploads/2015/08/profile-placeholder.jpg" alt="profile placeholder">
+			 <video id="vid-box" class="vid-box" style="z-index: 2;" width="350" height="350" autoplay></video>
+      </div>
+      <div class="video">
+        <img id="yourpicture" class="profilepic" src="http://eadb.org/wp-content/uploads/2015/08/profile-placeholder.jpg" alt="profile placeholder">
+       <video id="your-vid-box" class="vid-box" style="z-index: 2;" width="350" height="350" autoplay></video>
+      </div>
+      <div class="video">
+       <video id="friend1-vid-box" class="vid-box" style="z-index: 2;" width="350" height="350" autoplay></video>
+      </div>
+>>>>>>> origin/master
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle callmenu" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Tutor
@@ -269,7 +301,6 @@
           <a class="dropdown-item" href="#">Friend 2</a>
         </div>
         <button class="btn btn-primary callbutton" type="button" name="loginForm" id="login" onclick="makeCall()">Call</button>
-        <button onclick="maxWin()">fc</button>
       </div>
       <!-- <form name="loginForm" id="login" action="#" onsubmit="return login(this);">
         <input type="text" name="username" id="username" placeholder="Pick a username!" />
@@ -281,12 +312,26 @@
       </form>
     -->
     </div>
-    <div class="row" id="textchatbox">
-			<div id="pubnub-chat-section" class="text-center">
-				<div id="pubnub-chat-output"><div></div></div>
-				<input id="pubnub-chat-input" type="text" placeholder="chat here">
-			</div>
+
+
+    <div id="newSession">
+      Du har en bokad session idag <br><span class="bookedTime">Tisdag 6/12 kl. 13:30</span></br>
+      <div class="sessionInfo">
+        Studiecoach: <span class="chosenCoach">Coach Coachsson</span><br>
+        Antal elever: <span class="numberOfStudents">2</span>
+      </div>
+      <button id="start-session" class="btn btn-primary" name="loginForm" type="button" onclick="makeCall()">Starta session nu!</button>
     </div>
+
+    <div class="bottomOptions">
+      <div class="textIconDiv">
+        <img src="images/textchaticon.png" id="textchat-icon" alt="textchat">
+      </div>
+      <div class="calendarIconDiv">
+        <img src="images/calendaricon.png" id="calendar-icon" alt="calendar">
+      </div>
+    </div>
+
 
 <!--video chat room ends-->
   </div>
@@ -317,7 +362,7 @@
 <!-- Video Chat Room-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdn.pubnub.com/webrtc/webrtc.js"></script>
-<script src="scripts/video_chat_room.js"></script>
+<!--<script src="scripts/video_chat_room.js"></script>-->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>

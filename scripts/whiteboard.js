@@ -116,6 +116,28 @@ $("input[type='image']").click(function() {
     $("input[id='imageLoader']").click();
 });
 
+$("#calendar-icon").click(function() {
+	var sessionInfo = document.getElementById("newSession");
+	sessionInfo.style.display = "none";
+});
+
+// $("#textchat-icon").click(function() {
+// 	var chat = document.getElementById("pubnub-chat-section");
+// 	console.log("hallo", chat.style.display);
+// 	if (chat.style.display == "block") {
+// 		chat.style.display = "none";
+// 	} else {
+// 		chat.style.display == "block";
+// 	}
+   
+// });
+
+$(document).ready(function(){
+    $("#textchat-icon").click(function(){
+        $("#pubnub-chat-section").toggle();
+    });
+});
+
 (function() {
 	/* Canvas */
 
@@ -129,7 +151,9 @@ $("input[type='image']").click(function() {
 	var whiteboarddiv = document.getElementById('whiteboard');
 	whiteboarddiv.setAttribute("style","height:500px");
 	whiteboarddiv.style.height = canvas.height + "px";
-	whiteboarddiv.style.width = canvas.width + "px";
+	//whiteboarddiv.style.width = $("#whiteboard").width() + 80 + "px";
+
+	console.log($("#whiteboard").width());
 
 	var toolcol = document.getElementById('toolcolumn');
 	toolcol.setAttribute("style","height:500px");
@@ -138,6 +162,16 @@ $("input[type='image']").click(function() {
 	var chatbox = document.getElementById('chatbox');
 	chatbox.setAttribute("style","height:500px");
 	chatbox.style.height = canvas.height + "px";
+
+	// $(document).ready(function(){
+	//     $(window).resize(function(){
+	//     	console.log("window change");
+	//     	console.log(whiteboarddiv.width);
+	//         canvas.style.width = Math.min(document.getElementById("whiteboard").clientWidth + 35, window.innerWidth || 300);
+	// 		canvas.style.height = Math.min(document.documentElement.clientHeight, window.innerHeight || 300);
+	//     })
+	// });
+
 
 
 	ctx.strokeStyle = color;
@@ -253,6 +287,11 @@ $("input[type='image']").click(function() {
 
 	  	plots = [];
 	}
+
+	$("#trash").click(function() {
+		console.log("new whiteboard");
+		loadCanvas();
+	});
 
 	//FOR UPLOADING IMAGES
 
