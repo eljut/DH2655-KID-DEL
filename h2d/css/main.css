@@ -12,7 +12,7 @@ html {
 
 body {
   background-image: url("../img/bg.jpg");
-  background-size: 100%;
+  background-size:cover;
   height: 100%;
 }
 
@@ -46,6 +46,7 @@ body {
 .exit > li > a {
   background-color: #173863;
   color: white !important;
+  font-size: 20px;
 }
 
 /*Set size of the img*/

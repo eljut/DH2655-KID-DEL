@@ -1,3 +1,11 @@
+th {
+  padding-right: 40px !important;
+}
+
+td{
+  padding-right: 40px !important;
+}
+
 /*Profile box starts*/
 #profileCircle {
   border-width:0px;
@@ -65,12 +73,32 @@
   font-size: 40px;
 }
 
+/*collapsable divs*/
 #menuBox {
-  top: 150px;
+  width: 500px;
+  top: 200px;
   left: 400px;
 }
-.mb-0{
-  background-color: lightgrey !important;
-  height: 50px;
-  font-size: 30px;
+.collapsed {
+  text-align: center !important;
+  color: white !important;
+}
+.panel {
+  background-color: #173863 !important;
+  color: white !important;
+  min-height: 40px;
+  border: 0;
+}
+.panel-heading {
+  background-color: #173863 !important;
+  color: white !important;
+  min-height: 40px;
+  border: hidden !important;
+}
+.panel-title{
+  min-height: 100% !important;
+  font-size: 25px;
+}
+.panel-body{
+  font-size: 15px;
 }
