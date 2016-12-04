@@ -67,7 +67,7 @@ td{
   left:349px;
   top:151px;
   width:318px;
-  height:393px;
+  height:318px;
   z-index: 10;
   display: none;
 }
@@ -111,7 +111,7 @@ td{
 #g3{
   position: absolute;
   top: 70px;
-  left: 155px;
+  left: 160px;
   z-index: 11;
   color: white;
   text-align: center;
@@ -119,7 +119,7 @@ td{
 }
 #s1{
   position: absolute;
-  left: 35px;
+  left: 30px;
   top: 140px;
   z-index: 11;
   color: white;
@@ -128,7 +128,7 @@ td{
 }
 #s2{
   position: absolute;
-  left: 95px;
+  left: 96px;
   top: 140px;
   z-index: 11;
   color: white;
@@ -137,7 +137,7 @@ td{
 }
 #s3{
   position: absolute;
-  left: 165px;
+  left: 166px;
   top: 140px;
   z-index: 11;
   color: white;
@@ -153,8 +153,59 @@ td{
   text-align: center;
   font-size: 12px;
 }
+#b1{
+  position: absolute;
+  left: 30px;
+  top: 210px;
+  z-index: 11;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+#b2{
+  position: absolute;
+  left: 95px;
+  top: 210px;
+  z-index: 11;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+#b3{
+  position: absolute;
+  left: 165px;
+  top: 210px;
+  z-index: 11;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+#b4{
+  position: absolute;
+  left: 240px;
+  top: 210px;
+  z-index: 11;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+#b5{
+  position: absolute;
+  left: 300px;
+  top: 210px;
+  z-index: 11;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
 .setMedal{
-  height: 40px;
+  max-width: 50px;
+}
+.setMedal2{
+  max-width: 30px;
+}
+.setMedal3{
+  max-width: 30px;
 }
 .medalText{
   position: relative;
@@ -165,6 +216,30 @@ td{
   width: 100%;
 }
 /*Medal box ends*/
+
+/*Medal box info starts*/
+#medalBoxInfo {
+  border-width:0px;
+  position: relative;
+  left:360px;
+  top:151px;
+  width:373px;
+  height:80px;
+  z-index: 11;
+  display: none;
+}
+#infoImg{
+  position: absolute;
+  height: 100%;
+}
+#infoText{
+  position: absolute;
+  text-align: center;
+  color: white;
+  top: 25px;
+  left: 30px;
+}
+/*Medal box info ends*/
 
 
 /*collapsable divs*/
