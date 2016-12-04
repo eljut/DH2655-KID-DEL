@@ -242,7 +242,7 @@ body.alt2 {
 	border-radius: 10px;
 	bottom: 0;
 	position: absolute;
-	width: 97%;
+	width: 100% !important;
 }
 
 .hideNoteslider {
@@ -298,8 +298,12 @@ body.alt2 {
 	width: 15%;
 }
 
-.chatbox {
+.scrollable {
 	overflow-y: scroll; 
+	height: 93%;
+}
+
+.chatbox {
 	text-align: center;
 	border: solid #1C4F78 1pt;
 	float: right;

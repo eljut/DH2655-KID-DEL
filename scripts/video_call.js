@@ -14,6 +14,12 @@ function makeCall(){
 		document.getElementById("newSession").style.display = "block";
 	});
 
+	$("#callbutton").click(function() {
+		console.log("calling");
+	});
+
+	var friend = document.forms["callform"]["friends"].value;
+
 	// Get access to the camera!
 	if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 	    // Not adding `{ audio: true }` since we only want video now
@@ -33,6 +39,7 @@ function makeCall(){
 			friend1Video.src = window.URL.createObjectURL(stream);
 	        friend1Video.play();
 			friend1Video.style.display = "block";
+
 	    });
 	}
 }

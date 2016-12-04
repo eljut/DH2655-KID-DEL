@@ -264,57 +264,68 @@
 
   <!-- Chat -->
   <div class="col-md-3 chatbox" id="chatbox">
-    <div class="row videobox">
-      <div>
-        <div style="text-align: left;">
-          <img src="images/fullscreen.png" id="fullscreen" onclick="maxWin()"></img>
-        </div>
+    <div class="scrollable">
+      <div class="row videobox">
         <div>
-			     <img src="images/hangupicon.png" id="hangup" alt="hangup">
+          <div style="text-align: left;">
+            <img src="images/fullscreen.png" id="fullscreen" onclick="maxWin()"></img>
+          </div>
+          <div>
+  			     <img src="images/hangupicon.png" id="hangup" alt="hangup">
+          </div>
         </div>
-      </div>
-      <div class="video">
-        <img id="profilepicture" class="profilepic" src="http://eadb.org/wp-content/uploads/2015/08/profile-placeholder.jpg" alt="profile placeholder">
-			 <video id="vid-box" class="vid-box" style="z-index: 2;" width="350" height="350" autoplay></video>
-      </div>
-      <div class="video">
-        <img id="yourpicture" src="images/profileplaceholder.png" alt="profile placeholder">
-       <video id="your-vid-box" class="vid-box" style="z-index: 2;" width="350" height="350" autoplay></video>
-      </div>
-      <div class="video">
-       <video id="friend1-vid-box" class="vid-box" style="z-index: 2;" width="350" height="350" autoplay></video>
-      </div>
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle callmenu" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Tutor
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Tutor</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Friend 1</a>
-          <a class="dropdown-item" href="#">Friend 2</a>
+        <div class="video">
+          <img id="profilepicture" class="profilepic" src="http://eadb.org/wp-content/uploads/2015/08/profile-placeholder.jpg" alt="profile placeholder">
+  			 <video id="vid-box" class="vid-box" style="z-index: 2;" width="350" height="350" autoplay></video>
         </div>
-        <button class="btn btn-primary callbutton" type="button" name="loginForm" id="login" onclick="makeCall()">Call</button>
+        <div class="video">
+          <img id="yourpicture" src="images/profileplaceholder.png" alt="profile placeholder">
+         <video id="your-vid-box" class="vid-box" style="z-index: 2;" width="350" height="350" autoplay></video>
+        </div>
+        <div class="video">
+         <video id="friend1-vid-box" class="vid-box" style="z-index: 2;" width="350" height="350" autoplay></video>
+        </div>
+        <!-- <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle callmenu" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Tutor
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Friend 1</a>
+            <a class="dropdown-item" href="#">Friend 2</a>
+          </div>
+          <button class="btn btn-primary callbutton" type="button" name="loginForm" id="login" onclick="makeCall()">Call</button>
+        </div> -->
+
+        <form class="callform" name="callform" onsubmit="makeCall()">
+          <input list="friendlist" name="friends">
+          <datalist id="friendlist">
+            <option value="Karl">
+            <option value="Sofia">
+            <option value="Anna">
+          </datalist>
+          <img id="callbutton" src="images/callbutton.png" onclick="makeCall()">
+        </form>
+
+        <!-- <form name="loginForm" id="login" action="#" onsubmit="return login(this);">
+          <input type="text" name="username" id="username" placeholder="Pick a username!" />
+          <input type="submit" name="login_submit" value="Log In">
+        </form>
+        <form name="callForm" id="call" action="#" onsubmit="return makeCall(this);">
+          <input type="text" name="number" placeholder="Enter user to dial!" />
+          <input type="submit" value="Call"/>
+        </form>
+      -->
       </div>
-      <!-- <form name="loginForm" id="login" action="#" onsubmit="return login(this);">
-        <input type="text" name="username" id="username" placeholder="Pick a username!" />
-        <input type="submit" name="login_submit" value="Log In">
-      </form>
-      <form name="callForm" id="call" action="#" onsubmit="return makeCall(this);">
-        <input type="text" name="number" placeholder="Enter user to dial!" />
-        <input type="submit" value="Call"/>
-      </form>
-    -->
-    </div>
 
 
-    <div id="newSession">
-      Du har en bokad session idag <br><span class="bookedTime">Tisdag 6/12 kl. 13:30</span></br>
-      <div class="sessionInfo">
-        Studiecoach: <span class="chosenCoach">Coach Coachsson</span><br>
-        Antal elever: <span class="numberOfStudents">2</span>
+      <div id="newSession">
+        Du har en bokad session idag <br><span class="bookedTime">Tisdag 6/12 kl. 13:30</span></br>
+        <div class="sessionInfo">
+          Studiecoach: <span class="chosenCoach">Coach Coachsson</span><br>
+          Antal elever: <span class="numberOfStudents">2</span>
+        </div>
+        <button id="start-session" class="btn btn-primary" name="loginForm" type="button" onclick="makeCall()">Starta session nu!</button>
       </div>
-      <button id="start-session" class="btn btn-primary" name="loginForm" type="button" onclick="makeCall()">Starta session nu!</button>
     </div>
 
     <div class="bottomOptions">

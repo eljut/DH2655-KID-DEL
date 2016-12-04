@@ -55,10 +55,13 @@ video {
 	position: absolute;
 }
 
+#callbutton {
+	height: 30px;
+}
+
 .dropdown{
 	padding: 8px;
 	padding-right: 15px;
-	display: none;
 }
 
 #newSession {
@@ -77,7 +80,7 @@ video {
 #start-session {
 	margin-top: 15px;
 	border-radius: 10px;
-	width: 270px;
+	width: 200px;
 }
 
 .sessionInfo {
