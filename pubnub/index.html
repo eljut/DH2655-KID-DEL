@@ -17,8 +17,10 @@
     <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
     <!-- Video -->
     <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
-    <div class="row" id="videoBox">
-    <div class="col-md-12" id="setBack">
+    <div class="row">
+    <div class="col-md-12 text-center" id="setBack">
+      <video id="self-video" width="80" height="60" style="z-position: 899" autoplay></video>
+
         <!-- DISPLAY -->
         <!-- <div class="row"> -->
             <!-- <div class="col-xs-12 text-center setVideo"> -->
@@ -26,10 +28,13 @@
                     <div class="pubnub-relative">
                         <div id="video-self">...834y8uask</div>
                     </div>
+
                     <div id="video-display">
                         <span class="glyphicon glyphicon-flash"></span>
-                        <video id="self-video" width="80" height="60" style="z-position: 999" autoplay></video>
                     </div>
+                </div>
+                <div id="pubnub-relative">
+                  <div id="video-thumbnail"></div>
                 </div>
               </div>
             </div>
@@ -74,12 +79,12 @@
 
 
 
-  <div class="row" id="chatBox">
+
         <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
         <!-- MY PHONE NUMBER -->
         <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+      <div class="row">
         <div class="col-md-12">
-          <div class="row">
             <div id="my-number-section" class="text-center">
 
             <div class="col-md-12" id="setNumber">
@@ -102,7 +107,6 @@
                   <div></div>
                 </div>
             </div>
-          </div>
         </div>
   </div>
 
@@ -121,6 +125,8 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     });
 }
 </script>
+
+
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
 <!-- WebRTC Peer Connections -->
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
@@ -179,7 +185,7 @@ function urlstring(params) {
 // Calling & Answering Service
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 var video_out = PUBNUB.$('video-display');
-// var img_out   = PUBNUB.$('video-thumbnail');
+var img_out   = PUBNUB.$('video-thumbnail');
 var img_self  = PUBNUB.$('video-self');
 
 

@@ -3,21 +3,24 @@
 	position: absolute; 
 	bottom: 0;
 	background-color: white;
-	width: 97%;
+	width: 100%;
+    border-radius: 20px;
 }
 
 #innersymbolbox {
 	border: solid grey 1pt;
-	padding: 20px;
+	padding: 10px;
 	border-radius: 20px;
 }
 
 #subsymbolbox {
-	display: inline-block;
-	padding: 50px;
-	/*border-right: solid grey 1pt;*/
+	display: block;
+	padding: 20px;
 }
-
+#shapebox {
+    display: block;
+    padding: 60px;
+}
 
 .symbol_text { 
     position: absolute;
@@ -34,20 +37,6 @@
     transform: translate(0,-50%);
 }
 
-/*.pi { 
-    position:  absolute;
-    left: 0;
-    top: 0; /* set these so Chrome doesn't return 'auto' from getComputedStyle
-    width: 30px; 
-    height: 30px; 
-    background: rgba(255,255,255,0); 
-    background-image: url("../images/pi.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center; 
-    border-radius: 4px; padding: 8px;
-}*/
-
 .pi { 
     position:  absolute;
     left: 0;
@@ -57,12 +46,10 @@
     background: rgba(255,255,255,0); 
     background-image: url("../images/pi.png");
     /*background-size: contain;*/
-    background-size: 40px 40px;
+    background-size: 30px 30px;
     background-repeat: no-repeat;
     background-position: center; 
-    transform: translate(0,-50%);
-    /*border-style: solid;*/
-    padding: 10px;
+    transform: translate(-30%,-30%);
 }
 .square_root { 
     position: absolute;
@@ -73,67 +60,66 @@
     background: rgba(255,255,255,0); 
     background-image: url("../images/square_root.png");
     /*background-size: cover;*/
-    background-size: 40px 40px;
+    background-size: 30px 30px;
     background-repeat: no-repeat;
     background-position: center; 
-    transform: translate(0,-50%);
-    /*border-style: solid;*/
-    padding: 10px;
+    transform: translate(-30%,-30%);
+    /*padding: 10px;*/
 }
 
-.square { 
+.square {
     position: absolute;
     left: 0;
     top: 0;
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 170px;
     background: rgba(255,255,255,0); 
     background-image: url("../images/square.png");
-    background-size: 160px 160px;
+    background-size: 170px 170px;
     background-repeat: no-repeat;
     background-position: center; 
     /*border-style: solid;*/
-    transform: translate(20%,-50%);
+    transform: translate(0,-50%);
 }
 
-.triangle { 
+.triangle {
     position: absolute;
     left: 0;
     top: 0;
-    width: 200px; 
-    height: 200px; 
+    width: 150px; 
+    height: 150px; 
     background: rgba(255,255,255,0); 
     background-image: url("../images/triangle-black.png");
-    background-size: 160px 160px;
+    background-size: 150px 150px;
     background-repeat: no-repeat;
     background-position: center; 
     /*border-style: solid;*/
-    transform: translate(20%,-50%);
+    transform: translate(0,-50%);
 }
 
-.circle { 
+.circle {
     position: absolute;
     left: 0;
     top: 0;
-    width: 200px; 
-    height: 200px; 
+    width: 150px; 
+    height: 150px; 
     background: rgba(255,255,255,0); 
-    background-image: url("../images/circle.jpg");
-    background-size: 130px 130px;
+    background-image: url("../images/circle.png");
+    background-size: 120px 120px;
     background-repeat: no-repeat;
     background-position: center; 
     /*border-style: solid;*/
-    transform: translate(-30%,-50%);
+    transform: translate(0,-50%);
 }
-.rec_triangle { 
+.rec_triangle {
     position: absolute;
     left: 0;
     top: 0;
-    width: 200px; 
-    height: 200px; 
+    width: 150px; 
+    height: 150px; 
     background: rgba(255,255,255,0); 
     background-image: url("../images/rec_triangle.png");
-    background-size: 130px 130px;
+    background-size: 120px 120px;
     background-repeat: no-repeat;
     background-position: center; 
     /*border-style: solid;*/

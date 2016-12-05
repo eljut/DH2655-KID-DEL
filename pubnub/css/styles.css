@@ -14,9 +14,34 @@ body{
   background: transparent !important;
 }
 
+video {
+
+}
+
 .setVideo{
   position: relative;
   height: 200px;
+}
+
+.glyphicon {
+  position: absolute !important;
+  top: 0px !important;
+  left: 15px !important;
+  padding: 10px !important;
+}
+
+.glyphicon-flash {
+  position: absolute !important;
+  top: 0px !important;
+  left: 15px !important;
+  padding: 10px !important;
+}
+
+.glyphicon-facetime-video {
+  position: absolute !important;
+  top: 0px !important;
+  left: 15px !important;
+  padding: 10px !important;
 }
 
 #setBack{
@@ -25,11 +50,7 @@ body{
   border: none !important;
 }
 
-.container-fluid{
-  background: transparent !important;
-}
 
-#videoBox,
 #chatBox,
 #mainContainer {
   width: 200px;
@@ -123,6 +144,7 @@ body{
   left: 40px;
 }
 #my-number-section {
+  top: 100px;
   position: absolute;
   min-width: 100px;
   min-height: 50px;
@@ -160,19 +182,16 @@ body{
 /* Video Display */
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 #video-border {
-  height: 200px;
-  padding: 0px;
-  margin: 0px;
+  padding: 10px;
+  margin: 20px 0px;
   overflow: hidden;
-  position: absolute;
 }
 #video-display {
-    height: 200px;
-    text-align: center;
-    color: #eee;
-    font-size: 150px;
-    line-height: 340px;
-    position: absolute;
+  height: 100px;
+  text-align: center;
+  color: #eee;
+  font-size: 150px;
+  line-height: 340px;
 }
 #video-self {
     height: 80px;
@@ -182,6 +201,7 @@ body{
     background-color: green;
     display: block;
     position: absolute;
+    visibility: hidden;
 }
 #video-display video,
 #video-self img {
@@ -191,9 +211,10 @@ body{
 }
 #video-thumbnail {
     position: absolute;
-    top: -180px;
+    top: 0px;
     right: 10px;
-    position: absolute;
+    display: block;
+    background-color: green;
 }
 #video-thumbnail img {
     width: 120px;
