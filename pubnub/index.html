@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/ctrl.js"></script>
 </head>
 <body>
 <video id="self-video" height="50" autoplay></video>
@@ -12,6 +14,7 @@
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
 <!-- My Phone Number & Dial Areas -->
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<div class="container" id="master">
 <div class="container-fluid">
 
 
@@ -19,7 +22,7 @@
     <!-- Video -->
     <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
     <div class="row">
-    <div class="col-md-12 text-center" id="setBack">
+    <div class="col-md-12 text-center" style="padding: 0px">
 
 
         <!-- DISPLAY -->
@@ -90,7 +93,7 @@
             <div id="my-number-section" class="text-center">
 
             <div class="col-md-12">
-              <div id="infoNum">Ditt nr:</div>
+              <!-- <div id="infoNum">Ditt nr:</div> -->
 
               <div id="my-number">LOADING</div>
             </div>
@@ -113,6 +116,8 @@
   </div>
 
 
+
+</div>
 
 </div>
 
@@ -203,7 +208,7 @@ var phone     = window.phone = PHONE({
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 function connected(session) {
     video_out.innerHTML = '';
-    session.video.height = '200px';
+    session.video.height = '180px';
 
     video_out.appendChild(session.video);
 
