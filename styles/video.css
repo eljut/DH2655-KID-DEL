@@ -1,0 +1,15 @@
+#videoChat{
+	position: absolute;
+	top: 77px;
+	right: 0px;
+	overflow: hidden;
+	height: 590px;
+	max-width: 210px;
+	border: 0px;
+	margin: 0px !important;
+	border: 0px;
+}
+
+#chatbox{
+	display: none;
+}
