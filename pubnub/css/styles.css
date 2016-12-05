@@ -1,18 +1,8 @@
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 /* PubNub Logo */
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
-/*html{
-  min-width: 100vw;
-  min-height: 100vh;
-  background-image: url("../img/bg.jpg");
-  background-size: cover;
-}
-body{
-  position: relative;
-  width: 200px;
-  max-height: 100vh;
-  background: transparent !important;
-}*/
+
+ /*Version 1.0*/
 #master{
   padding: 0px 5px 0px 5px;
   margin: 0px;
