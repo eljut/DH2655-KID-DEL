@@ -18,7 +18,7 @@
     <!-- Video -->
     <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
     <div class="row" id="videoBox">
-    <div class="col-md-12" id="setBack">
+    <div class="col-md-12 text-center" id="setBack">
         <!-- DISPLAY -->
         <!-- <div class="row"> -->
             <!-- <div class="col-xs-12 text-center setVideo"> -->
@@ -27,10 +27,13 @@
                         <div id="video-self">...834y8uask</div>
                     </div>
                     <div id="video-display">
-                      <video id="video-thumbnail"></video>
+
                         <span class="glyphicon glyphicon-flash"></span>
-                        <video id="self-video" width="80" height="60" style="z-position: 899" autoplay></video>
+                        <!-- <video id="self-video" width="80" height="60" style="z-position: 899" autoplay></video> -->
                     </div>
+                </div>
+                <div id="pubnub-relative">
+                  <div id="video-thumbnail"></div>
                 </div>
               </div>
             </div>
@@ -111,7 +114,7 @@
 </div>
 
 <!-- Self-video -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 var video = document.getElementById('self-video');
 if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     // Not adding `{ audio: true }` since we only want video now
@@ -120,7 +123,9 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         video.play();
     });
 }
-</script>
+</script> -->
+
+
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
 <!-- WebRTC Peer Connections -->
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
