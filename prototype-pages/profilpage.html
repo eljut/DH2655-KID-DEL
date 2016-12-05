@@ -132,6 +132,9 @@
 
       <!-- Profile box starts -->
       <div id="name_div">Pelle Fjant</div>
+      <script>
+        document.getElementById("name_div").innerHTML = localStorage.getItem("username");
+      </script>
         <div class="col-sm-4" id="profileCircle">
           <img src="img/profileBg.png">
           <img src="img/p1.png" id="profileImg"></img>
