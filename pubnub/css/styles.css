@@ -23,25 +23,33 @@ video {
   height: 200px;
 }
 
-.glyphicon {
-  position: absolute !important;
-  top: 0px !important;
-  left: 15px !important;
-  padding: 10px !important;
+#self-video{
+  top: 200px;
+  left: 200px;
 }
 
-.glyphicon-flash {
+/*.glyphicon {
   position: absolute !important;
   top: 0px !important;
-  left: 15px !important;
-  padding: 10px !important;
+  left: 0px !important;
+  padding: 25px !important;
+  max-height: 100% !important;
+}*/
+
+#video-display > .glyphicon-flash {
+  position: absolute !important;
+  top: 20px !important;
+  left: 0px !important;
+  padding-left: 30px !important;
+  max-height: 100% !important;
 }
 
-.glyphicon-facetime-video {
+#video-display > .glyphicon-facetime-video {
   position: absolute !important;
-  top: 0px !important;
-  left: 15px !important;
-  padding: 10px !important;
+  top: 20px !important;
+  left: 0px !important;
+  padding-left: 30px !important;
+  max-height: 100% !important;
 }
 
 #setBack{
@@ -92,8 +100,12 @@ video {
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 #pubnub-chat-section {
     margin: 0px;
+    padding: 0px;
+    left: 0px;
     position: absolute;
-    top: 100px;
+    top: 30px;/*31px;*/
+    min-width: 100%;
+    background-color: white;
 }
 #pubnub-chat-input {
     width: 100%;
@@ -130,8 +142,8 @@ video {
 /* Phone Number Display */
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 #setNumber{
-  position: absolute;
-  top: 50px;
+  position: absolute !important;
+  top: 0px;
 }
 #infoNum{
   position: absolute;
@@ -144,7 +156,11 @@ video {
   left: 40px;
 }
 #my-number-section {
-  top: 100px;
+  top: 0px;
+  left: 0px;
+  padding: 0px;
+  color: white;
+  font-size: 12px;
   position: absolute;
   min-width: 100px;
   min-height: 50px;
@@ -232,7 +248,8 @@ video {
 #setIcons{
   height: 50px !important;
   width: 200px;
-  top: 260px;
+  top: 220px;
+  left: 72px;/*37px;*/
   position: absolute;
 }
 
