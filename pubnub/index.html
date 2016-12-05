@@ -11,15 +11,82 @@
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
 <!-- My Phone Number & Dial Areas -->
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
-<div class="container">
-    <div class="row">
+<div class="container-fluid">
 
+
+    <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <!-- Video -->
+    <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <div class="row" id="videoBox">
+    <div class="col-md-12" id="setBack">
+        <!-- DISPLAY -->
+        <!-- <div class="row"> -->
+            <!-- <div class="col-xs-12 text-center setVideo"> -->
+                <div id="video-border">
+                    <div class="pubnub-relative">
+                        <div id="video-self">...834y8uask</div>
+                    </div>
+                    <div id="video-display">
+                        <span class="glyphicon glyphicon-flash"></span>
+                        <video id="self-video" width="80" height="60" style="z-position: 999" autoplay></video>
+                    </div>
+                </div>
+              </div>
+            </div>
+                <!-- <div id="pubnub-relative">
+                </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
+  <div class="row">
+        <!-- DIAL CONTROLS -->
+        <div class="col-md-12">
+            <div class="row">
+              <div class="form-group"><div class="input-group">
+              <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-th"></span>
+              </div>
+              <input id="number" class="form-control" type="number" placeholder="Type Recipient's #">
+              </div></div>
+          </div>
+        </div>
+  </div>
+
+          <div class="row" id="setIcons">
+            <div class="col-md-12">
+              <button id="dial" class="btn btn-primary">
+                  <span class="glyphicon glyphicon-earphone setIcons"></span>
+              </button>
+              <button id="snap" class="btn btn-success">
+                  <span class="glyphicon glyphicon-camera setIcons"></span>
+              </button>
+              <button id="hangup" class="btn btn-danger">
+                  <span class="glyphicon glyphicon-ban-circle setIcons"></span>
+              </button>
+            </div>
+          </div>
+
+<!-- </div> -->
+
+
+
+
+
+
+
+
+  <div class="row" id="chatBox">
         <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
         <!-- MY PHONE NUMBER -->
         <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
-        <div class="col-sm-6">
+        <div class="col-md-12">
+          <div class="row">
             <div id="my-number-section" class="text-center">
-                <div id="my-number">LOADING</div>
+
+            <div class="col-md-12" id="setNumber">
+              <div id="infoNum">Ditt nr:</div>
+
+              <div id="my-number">LOADING</div>
+            </div>
                 <div id="my-number-title" class="hidden-sm hidden-xs">
                     this is <strong>your phone number</strong>
                 </div>
@@ -31,55 +98,16 @@
             </div>
             <div id="pubnub-chat-section" class="text-center">
                 <input id="pubnub-chat-input" type="text" placeholder="chat here">
-                <div id="pubnub-chat-output"><div></div></div>
+                <div id="pubnub-chat-output">
+                  <div></div>
+                </div>
             </div>
+          </div>
         </div>
+  </div>
 
-        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
-        <!-- Video -->
-        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
-        <div class="col-sm-6">
-            <!-- DISPLAY -->
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <div id="video-border">
-                        <div class="pubnub-relative">
-                            <div id="video-self">...834y8uask</div>
-                        </div>
-                        <div id="video-display">
-                            <span class="glyphicon glyphicon-flash"></span>
-                            <video id="self-video" width="80" height="60" style="z-position: 999" autoplay></video>
-                        </div>
-                    </div>
-                    <!-- <div id="pubnub-relative">
-                    </div> -->
-                </div>
-            </div>
 
-            <!-- DIAL CONTROLS -->
-            <div class="row">
-                <div class="col-sm-6 col-xs-7">
-                    <div class="form-group"><div class="input-group">
-                    <div class="input-group-addon">
-                        <span class="glyphicon glyphicon-th"></span>
-                    </div>
-                    <input id="number" class="form-control" type="number" placeholder="Type Recipient's #">
-                    </div></div>
-                </div>
-                <div class="col-sm-6 col-xs-5 dial-buttons">
-                    <button id="dial" class="btn btn-primary">
-                        <span class="glyphicon glyphicon-earphone"></span>
-                    </button>
-                    <button id="snap" class="btn btn-success">
-                        <span class="glyphicon glyphicon-camera"></span>
-                    </button>
-                    <button id="hangup" class="btn btn-danger">
-                        <span class="glyphicon glyphicon-ban-circle"></span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </div>
 
 <!-- Self-video -->

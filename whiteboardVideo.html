@@ -1,0 +1,383 @@
+<!doctype html>
+
+<!--
+  Copyright 2015 Google Inc. All rights reserved.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+      https://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+
+  <!-- Whiteboard Styling -->
+  <link rel="stylesheet" type="text/css" href="styles/whiteboard_style.css" />
+  <link rel="stylesheet" type="text/css" href="styles/main.css" />
+  <link rel="stylesheet" type="text/css" href="styles/video_chat.css" />
+  <link rel="stylesheet" type="text/css" href="styles/calStyle.css">
+  <link rel="stylesheet" type="text/css" href="jquery.bxslider/jquery.bxslider.css" />
+  <link rel="stylesheet" type="text/css" href="styles/drag_and_drop.css">
+  <link rel="stylesheet" type="text/css" href="styles/text_chat.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <script type="text/javascript">
+    function maxWin(){
+      var i = document.getElementById("vid-box");
+
+      // go full-screen
+      if (i.requestFullscreen) {
+      	i.requestFullscreen();
+      } else if (i.webkitRequestFullscreen) {
+      	i.webkitRequestFullscreen();
+      } else if (i.mozRequestFullScreen) {
+      	i.mozRequestFullScreen();
+      } else if (i.msRequestFullscreen) {
+      	i.msRequestFullscreen();
+      }
+    }
+  </script>
+<div class="nav navbar-nav navbar-fixed-top">
+    <a class="navbar-brand" href="https://myacademy.se/">
+      <img class="logo" src="images/MA_logga.png"/>
+    </a>
+    <div class="navbar-buttons">
+      <a class="nav-item nav-link navbutton" href="prototype-pages/profilpage.html">Profil</a>
+			<a class="nav-item nav-link navbutton" href="prototype-pages/boka_tid_start.html">Boka studiehjälp</a>
+      <a class="nav-item nav-link active navbutton" href="whiteboard.html">Klassrum</a>
+      <a class="nav-item nav-link navbutton" href="prototype-pages/quiz_new.html">Quiz</a>
+    </div>
+  </div>
+
+<!-- Toolbox -->
+<div class="container-fluid">
+  <div class="col-md-1 toolcolumn" id="toolcolumn">
+    <div class="toolbox">
+      <img class="tool penpic" id="pen-popover" src="images/penicon_yellow.png" alt="pen" data-toggle="popover">
+      <img class="tool eraserpic" src="images/erasericon_yellow.png" alt="eraser" data-toggle="popover" data-content="And here's some amazing content. It's very engaging. Right?">
+      <img class="tool" id="color-popover" src="images/color-symbol_yellow.png" alt="color" data-toggle="popover">
+      <img class="tool calculatorpic" id="calculatoricon" src="images/calculator_yellow.png" alt="calculator">
+      <input type="image" class="tool" id="imageupload" src="images/imageicon_yellow.png" alt="imageupload">
+      <input type="file" id="imageLoader" name="imageLoader" style="display: none"/>
+      <!-- <img class="tool trianglepic" src="images/triangle.png" alt="triangle" data-toggle="popover" data-content=""> -->
+      <img id="pisymbol" class="tool pipic" src="images/pi-symbol_yellow.png" alt="symbols">
+      <img id="notesymbol" class="tool" src="images/note_yellow.png" alt="scribble">
+    </div>
+  </div>
+
+  <!-- Whiteboard -->
+  <div class="col-md-8" id="whiteboard" ondragover="drag_over(event)" ondrop="drop(event)">
+    <canvas id="drawCanvas" width="300" height="300">Canvas is not supported on this browser!</canvas>
+
+    <div id="colorSwatch" class="hidden">
+      <input type="radio" name="color" id="color01" data-color="black" checked><label for="color01"></label>
+      <input type="radio" name="color" id="color02" data-color="blue">  <label for="color02"></label>
+      <input type="radio" name="color" id="color03" data-color="red">    <label for="color03"></label>
+      <input type="radio" name="color" id="color04" data-color="yellowgreen"> <label for="color04"></label>
+      <input type="radio" name="color" id="color05" data-color="gold"> <label for="color05"></label>
+    </div>
+
+    <div id="thickness" class="thickness hidden">
+      <div class="circle20"></div>
+      <div class="circle10"></div>
+      <div class="circle5"></div>
+      <div class="circle3"></div>
+      <div class="circle1"></div>
+    </div>
+
+    <div class="canvastools">
+      <a id="download">
+        <img class="download-icon" src="images/downloadicon_blue.png" alt="download">
+      </a>
+      <a id="save">
+        <img class="save-icon" src="images/saveicon.png" alt="save">
+      </a>
+      <a id="trash">
+        <img class="trash-icon" src="images/trashicon.png" alt="trash">
+      </a>
+    </div>
+
+    <div id="canvas-saved">
+      Anteckningar sparade!
+    </div>
+
+    <div id="papertype">
+      <img class="papertype" id="gridtype" src="images/gridicon.png" alt="grid">
+      <img class="papertype" id="nongridtype" src="images/nongridicon.png" alt="grid">
+    </div>
+
+    <div id="calculator">
+
+      <img src="images/closebutton.png" alt="close" id="closecalc">
+    <!-- Screen and clr key -->
+      <div class="top">
+        <span class="clear">C</span>
+        <div class="screen"></div>
+      </div>
+
+      <div class="keys">
+      <!-- Ops and keys -->
+        <span>7</span>
+        <span>8</span>
+        <span>9</span>
+        <span class="operator">+</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span class="operator">-</span>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span class="operator">/</span>
+        <span>0</span>
+        <span>.</span>
+        <span class="eval">=</span>
+        <span class="operator">x</span>
+      </div>
+    </div>
+
+    <div id="symbolbox">
+      <div id="innersymbolbox">
+        <div id="subsymbolbox">
+          <div class="col-md-12">
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme13" ondragstart="drag_start(event)">1</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme14" ondragstart="drag_start(event)">2</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme15" ondragstart="drag_start(event)">3</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme16" ondragstart="drag_start(event)">4</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme17" ondragstart="drag_start(event)">5</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme18" ondragstart="drag_start(event)">6</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme19" ondragstart="drag_start(event)">7</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme20" ondragstart="drag_start(event)">8</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme21" ondragstart="drag_start(event)">9</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme22" ondragstart="drag_start(event)">0</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme23" ondragstart="drag_start(event)">x</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme24" ondragstart="drag_start(event)">y</span></div>
+          </div>
+        </div>
+        <div id="subsymbolbox">
+          <div class="row">
+            <div class="col-md-2"><p class="circle" draggable="true" id="dragme25" ondragstart="drag_start(event)"></p></div>
+          </div>
+        </div>
+        <div id="subsymbolbox">
+          <div class="row">
+            <div class="col-md-2"><p class="square" draggable="true" id="dragme27" ondragstart="drag_start(event)"></p></div>
+          </div>
+        </div>
+        <div id="subsymbolbox">
+          <div class="col-md-12" align="top">
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme1" ondragstart="drag_start(event)">+</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme2" ondragstart="drag_start(event)">-</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme3" ondragstart="drag_start(event)">×</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme4" ondragstart="drag_start(event)">÷</span></div>
+            <div class="col-md-1"><p class="square_root" draggable="true" id="dragme5" ondragstart="drag_start(event)"></p></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme6" ondragstart="drag_start(event)">=</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme7" ondragstart="drag_start(event)">≠</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme8" ondragstart="drag_start(event)">&lt;</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme9" ondragstart="drag_start(event)">&gt;</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme10" ondragstart="drag_start(event)">≤</span></div>
+            <div class="col-md-1"><span class="symbol_text" draggable="true" id="dragme11" ondragstart="drag_start(event)">≥</span></div>
+            <div class="col-md-1"><p class="pi" draggable="true" id="dragme12" ondragstart="drag_start(event)"></p></div>
+          </div>
+        </div>
+        <div id="subsymbolbox">
+          <div class="row">
+            <div class="col-md-2"><p class="rec_triangle" draggable="true" id="dragme28" ondragstart="drag_start(event)"></p></div>
+          </div>
+        </div>
+        <div id="subsymbolbox">
+          <div class="row">
+            <div class="col-md-2"><p class="triangle" draggable="true" id="dragme26" ondragstart="drag_start(event)"></p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="notebox">
+      <div id="innernotebox">
+        <div id="dailyNote">
+          <div class="row">Idag</div>
+          <div class="row">
+            <img id="notethumb" src="images/scribble.png" alt="scribble">
+            <img id="notethumb" src="images/scribble.png" alt="scribble">
+            <img id="notethumb" src="images/scribble.png" alt="scribble">
+          </div>
+        </div>
+        <div id="dailyNote">
+          <div class="row">26-11-16</div>
+          <div class="row">
+            <img id="notethumb" src="images/scribble.png" alt="scribble">
+            <img id="notethumb" src="images/scribble.png" alt="scribble">
+            <img id="notethumb" src="images/scribble.png" alt="scribble">
+          </div>
+        </div>
+        <img id="next-button" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_right_48px-128.png"></img>
+      </div>
+    </div>
+    <div id="noteslider" class="hideNoteslider">
+      <div class="bxslider">
+        <div class="slidercontent">
+          Idag
+          <img src="images/scribble.png" id="notethumb">
+        </div>
+        <div class="slidercontent">
+          <br>
+          <img src="images/scribble.png" id="notethumb">
+        </div>
+        <div class="slidercontent">
+          <br>
+          <img src="images/scribble.png" id="notethumb">
+        </div>
+        <div class="slidercontent notedivider"></div>
+        <div class="slidercontent">
+          26-11-16
+          <img src="images/scribble.png" id="notethumb">
+        </div>
+        <div class="slidercontent">
+          <br>
+          <img src="images/scribble.png" id="notethumb">
+        </div>
+        <div class="slidercontent">
+          <br>
+          <img src="images/scribble.png" id="notethumb">
+        </div>
+        <div class="slidercontent notedivider"></div>
+      </div>
+    </div>
+
+     <!--<div class="row" id="textchatbox">-->
+      <div id="pubnub-chat-section" class="text-center">
+        <div id="pubnub-chat-output"><div></div></div>
+        <input id="pubnub-chat-input" type="text" placeholder="chat here">
+      </div>
+    <!--</div>-->
+  </div>
+
+  <!-- Chat -->
+  <div class="col-md-3 chatbox" id="chatbox">
+    <div class="scrollable">
+      <div class="row videobox">
+        <div>
+          <div style="text-align: left;">
+            <img src="images/fullscreen.png" id="fullscreen" onclick="maxWin()"></img>
+          </div>
+          <div>
+  			     <img src="images/hangupicon.png" id="hangup" alt="hangup">
+          </div>
+        </div>
+        <div class="video">
+          <img id="profilepicture" class="profilepic" src="http://eadb.org/wp-content/uploads/2015/08/profile-placeholder.jpg" alt="profile placeholder">
+  			 <video id="vid-box" class="vid-box" style="z-index: 2;" width="350" height="350" autoplay></video>
+        </div>
+        <div class="video">
+          <img id="yourpicture" src="images/profileplaceholder.png" alt="profile placeholder">
+         <video id="your-vid-box" class="vid-box" style="z-index: 2;" width="350" height="350" autoplay></video>
+        </div>
+        <div class="video">
+         <video id="friend1-vid-box" class="vid-box" style="z-index: 2;" width="350" height="350" autoplay></video>
+        </div>
+        <!-- <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle callmenu" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Tutor
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Friend 1</a>
+            <a class="dropdown-item" href="#">Friend 2</a>
+          </div>
+          <button class="btn btn-primary callbutton" type="button" name="loginForm" id="login" onclick="makeCall()">Call</button>
+        </div> -->
+
+        <form class="callform" name="callform" onsubmit="makeCall()">
+          <input list="friendlist" name="friends">
+          <datalist id="friendlist">
+            <option value="Karl">
+            <option value="Sofia">
+            <option value="Anna">
+          </datalist>
+          <img id="callbutton" src="images/callbutton.png" onclick="makeCall()">
+        </form>
+
+        <!-- <form name="loginForm" id="login" action="#" onsubmit="return login(this);">
+          <input type="text" name="username" id="username" placeholder="Pick a username!" />
+          <input type="submit" name="login_submit" value="Log In">
+        </form>
+        <form name="callForm" id="call" action="#" onsubmit="return makeCall(this);">
+          <input type="text" name="number" placeholder="Enter user to dial!" />
+          <input type="submit" value="Call"/>
+        </form>
+      -->
+      </div>
+
+
+      <div id="newSession">
+        Du har en bokad session idag <br><span class="bookedTime">Tisdag 6/12 kl. 13:30</span></br>
+        <div class="sessionInfo">
+          Studiecoach: <span class="chosenCoach">Coach Coachsson</span><br>
+          Antal elever: <span class="numberOfStudents">2</span>
+        </div>
+        <button id="start-session" class="btn btn-primary" name="loginForm" type="button" onclick="makeCall()">Starta session nu!</button>
+      </div>
+    </div>
+
+    <div class="bottomOptions">
+      <div class="textIconDiv">
+        <img src="images/textchaticon.png" id="textchat-icon" alt="textchat">
+      </div>
+      <div class="calendarIconDiv">
+        <img src="images/calendaricon.png" id="calendar-icon" alt="calendar">
+      </div>
+    </div>
+
+
+<!--video chat room ends-->
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBA7UtW9KjeIyjKqd2COYQfV7ja5SgRiDo",
+    authDomain: "friendlychat-dd071.firebaseapp.com",
+    databaseURL: "https://friendlychat-dd071.firebaseio.com",
+    storageBucket: "friendlychat-dd071.appspot.com",
+    messagingSenderId: "585115750883"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+    // For history() demo, please view history.html.
+    var drawHistory = false;
+</script>
+
+<script src="scripts/main.js"></script>
+<!-- Whiteboard-->
+<script src="https://cdn.pubnub.com/pubnub-3.14.1.min.js"></script>
+
+<!-- Video Chat Room-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdn.pubnub.com/webrtc/webrtc.js"></script>
+<!--<script src="scripts/video_chat_room.js"></script>-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+<script src="jquery.bxslider/jquery.bxslider.min.js"></script>
+
+<script src="scripts/whiteboard.js"></script>
+<script src="scripts/calMain.js"></script>
+<script src="scripts/drag_and_drop.js"></script>
+<script src="scripts/text_chat.js"></script>
+<script src="scripts/video_call.js"></script>
+
+</body>
+</html>
