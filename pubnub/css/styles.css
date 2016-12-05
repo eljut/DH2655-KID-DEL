@@ -14,12 +14,26 @@ body{
   background: transparent !important;
 }*/
 #master{
-  padding: 0px;
+  padding: 0px 5px 0px 5px;
   margin: 0px;
   max-width: 215px;
   min-height: 100vh;
   background-image: url("../img/bg.jpg");
   background-size: cover;
+}
+#teleList{
+  margin: 0px;
+  width: 200px;
+  top: 20px;
+  left: 5px;
+  position: absolute;
+}
+.input-group-addon{
+  display: none;
+}
+
+#number{
+  visibility: hidden;
 }
 #profile{
   position: absolute;
@@ -117,14 +131,17 @@ body{
     padding: 0px;
     left: 0px;
     position: absolute;
-    top: 30px;/*31px;*/
+    top: 45px;/*31px;*/
     min-width: 100%;
 }
 #pubnub-chat-input {
-    width: 100%;
+  position: absolute;
+    width: 200px;
+    left: 5px;
     margin: 0px 0px 20px 0px;
     outline: 0;
     border: 0px;
+    border-radius: 5px;
     /*border-bottom: 2px solid #eee;*/
     font-size: 20px;
     font-weight: 100;
@@ -272,7 +289,7 @@ body{
   height: 50px !important;
   width: 200px;
   top: 230px;
-  left: 72px;/*37px;*/
+  left: 45px;/*37px;*/
   position: absolute;
 }
 
@@ -288,11 +305,12 @@ body{
     #my-number-section {
         margin: 10px 0px;
         position: absolute;
+        left: 0px;
     }
     #my-number {
-        font-size: 10px;
+        font-size: 5px !important;
         width: 60px;
-        left: 5px;
+        left: 0px !important;
         top: 0px !important;
         /*line-height: 44px;*/
         /*font-weight: normal;*/
