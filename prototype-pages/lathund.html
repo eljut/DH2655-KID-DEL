@@ -1,0 +1,68 @@
+<!-- Search and remove these divs and their childs
+1. Remove header (group)
+2. Remove background (group)
+3. Remove footer (group)
+4. open: files/page_name/styles.css
+4.1 Replace: body{ old content } with:
+
+body {
+  height: 100%;
+  margin: 0px;
+  background-image: url('../../img/bg.jpg');
+  background-size: cover;
+}﻿
+
+4.2 Save the styles.css
+5. replace and/or add the following code as described
+    in the comments bellow
+6. save the .html file and test the new look-->
+
+
+
+<!-- Replace line 12 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<!-- Add after line 17 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+
+
+
+<!-- Put after <body>
+Also, set the appropiate li element to "active" in the class
+attribute. and add all the href to the right page. -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid nav-border">
+    <div class="navbar-header setNavHeader">
+      <img src="img/logo.png" style="margin: 10px"></img>
+    </div>
+    <ul class="nav navbar-nav mainMenu">
+      <li class="active setNavHeader"><a href="#">Min profil</a></li>
+      <li class="setNavHeader"><a href="#">Boka</a></li>
+      <li class="setNavHeader"><a href="#">Klassrum</a></li>
+      <li class="setNavHeader"><a href="#">Quiz</a></li>
+    </ul>
+    <ul class="nav navbar-nav exit">
+      <li class="exitText"><a href="#">Logga ut</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+<!-- Put above </body> -->
+<footer class="footer theFooter">
+  <div class="container-fluid">
+  <div class="col-sm-4 setFooter">
+    <img src="img/faq.png"></img>
+  </div>
+  <div class="col-sm-4 setFooter">
+    <img src="img/contact.png"></img>
+  </div>
+  <div class="col-sm-4 setFooter">
+    <img src="img/follow.png"></img>
+  </div>
+</div>
+</footer>

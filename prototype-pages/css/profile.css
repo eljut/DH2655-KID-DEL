@@ -1,0 +1,278 @@
+th {
+  padding-right: 40px !important;
+}
+
+td{
+  padding-right: 40px !important;
+}
+
+/*Profile box starts*/
+#profileCircle {
+  border-width:0px;
+  position:absolute;
+  left:69px;
+  top:196px;
+  width:230px;
+  height:240px;
+}
+#profileImg {
+  border-width:0px;
+  position:absolute;
+  left:18px;
+  top:40px;
+  width:230px;
+  height:170px;
+}
+#pokalImg {
+  border-width:0px;
+  position:absolute;
+  left:160px;
+  top:160px;
+  width:123px;
+  height:123px;
+}
+#pokalContainer {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:50px;
+  height:50px;
+}
+#name_div {
+  border-width:0px;
+  position:absolute;
+  text-align: center;
+  left:69px;
+  top:140px;
+  width:261px;
+  height:42px;
+  background:inherit;
+  background-color:rgba(255, 255, 255, 0);
+  border:none;
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-size:36px;
+  color:#FFFFFF;
+}
+/*Profile box ends*/
+
+
+/*Medal box start*/
+#medalBox {
+  border-width:0px;
+  position: relative;;
+  left:349px;
+  top:151px;
+  width:318px;
+  height:318px;
+  z-index: 10;
+  display: none;
+}
+#medalBoxImg {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:393px;
+  height:318px;
+}
+#medalBoxTitle{
+  position: absolute;
+  width: 100%;
+  top: 10px;
+  left: 32px;
+  text-align: center;
+  color: white;
+  z-index: 11;
+  font-size: 30px;
+  border-bottom: thick solid white;
+}
+#g1{
+  position: absolute;
+  left: 30px;
+  top: 70px;
+  z-index: 11;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+#g2{
+  position: absolute;
+  top: 70px;
+  left: 90px;
+  z-index: 11;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+#g3{
+  position: absolute;
+  top: 70px;
+  left: 160px;
+  z-index: 11;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+#s1{
+  position: absolute;
+  left: 30px;
+  top: 140px;
+  z-index: 11;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+#s2{
+  position: absolute;
+  left: 96px;
+  top: 140px;
+  z-index: 11;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+#s3{
+  position: absolute;
+  left: 166px;
+  top: 140px;
+  z-index: 11;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+#s4{
+  position: absolute;
+  left: 230px;
+  top: 140px;
+  z-index: 11;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+#b1{
+  position: absolute;
+  left: 30px;
+  top: 210px;
+  z-index: 11;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+#b2{
+  position: absolute;
+  left: 95px;
+  top: 210px;
+  z-index: 11;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+#b3{
+  position: absolute;
+  left: 165px;
+  top: 210px;
+  z-index: 11;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+#b4{
+  position: absolute;
+  left: 240px;
+  top: 210px;
+  z-index: 11;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+#b5{
+  position: absolute;
+  left: 300px;
+  top: 210px;
+  z-index: 11;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+.setMedal{
+  max-width: 50px;
+}
+.setMedal2{
+  max-width: 30px;
+}
+.setMedal3{
+  max-width: 30px;
+}
+.medalText{
+  position: relative;
+  text-align: center;
+  width: 100px !important;
+  left: 0px !important;
+  color: white;
+  width: 100%;
+}
+/*Medal box ends*/
+
+/*Medal box info starts*/
+#medalBoxInfo {
+  border-width:0px;
+  position: relative;
+  left:360px;
+  top:151px;
+  width:373px;
+  height:80px;
+  z-index: 11;
+  display: none;
+}
+#infoImg{
+  position: absolute;
+  height: 100%;
+}
+#infoText{
+  position: absolute;
+  text-align: center;
+  color: white;
+  top: 25px;
+  left: 30px;
+}
+/*Medal box info ends*/
+
+
+/*collapsable divs*/
+#menuBox {
+  width: 500px;
+  top: 200px;
+  left: 400px;
+  position: fixed;
+}
+.collapsed {
+  text-align: center !important;
+  color: white !important;
+}
+.panel {
+  background-color: #173863 !important;
+  color: white !important;
+  min-height: 40px;
+  border: 0;
+  border-radius: 8px !important;
+}
+.panel-heading {
+  background-color: #173863 !important;
+  color: white !important;
+  min-height: 40px;
+  border-radius: 20px !important;
+  padding-top: 7px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+}
+.panel-title{
+  min-height: 100% !important;
+  font-size: 25px;
+}
+.panel-body{
+  font-size: 15px;
+}
