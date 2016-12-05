@@ -23,6 +23,14 @@ video {
   height: 200px;
 }
 
+.glyphicon,
+.glyphicon-flash,
+.glyphicon-facetime-video {
+  position: absolute;
+  top: 0px;
+  left: 15px;
+  padding: 10px;
+}
 #setBack{
   background: transparent !important;
   padding: 10px;
@@ -180,6 +188,7 @@ video {
     background-color: green;
     display: block;
     position: absolute;
+    visibility: hidden;
 }
 #video-display video,
 #video-self img {
