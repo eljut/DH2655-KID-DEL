@@ -4,7 +4,6 @@
   background-image: url('../../img/bg.jpg');
   background-size: cover;
 }﻿
-
 #base {
   position:absolute;
   z-index:0;
@@ -107,6 +106,7 @@
   font-size:16px;
   text-decoration:none;
   color:#000000;
+  background: white;
 }
 #u691_input:disabled {
   color:grayText;
@@ -157,6 +157,7 @@
   font-size:16px;
   text-decoration:none;
   color:#000000;
+  background: white;
 }
 #u693_input:disabled {
   color:grayText;
