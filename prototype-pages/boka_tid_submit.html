@@ -9,12 +9,15 @@
     <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
     <link href="data/styles.css" type="text/css" rel="stylesheet"/>
     <link href="files/boka_tid_submit/styles.css" type="text/css" rel="stylesheet"/>
-    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
     <script src="resources/scripts/prototypePre.js"></script>
     <script src="data/document.js"></script>
     <script src="resources/scripts/prototypePost.js"></script>
     <script src="files/boka_tid_submit/data.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <script type="text/javascript">
       $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
       $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
@@ -22,87 +25,23 @@
     </script>
   </head>
   <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid nav-border">
+        <div class="navbar-header setNavHeader">
+          <img src="img/logo.png" style="margin: 10px"></img>
+        </div>
+        <ul class="nav navbar-nav mainMenu">
+          <li class="setNavHeader"><a href="profilepage.html">Min profil</a></li>
+          <li class="setNavHeader"><a href="#">Boka</a></li>
+          <li class="setNavHeader"><a href="../whiteboard.html">Klassrum</a></li>
+          <li class="active setNavHeader"><a href="quiz_start.html">Quiz</a></li>
+        </ul>
+        <ul class="nav navbar-nav exit">
+          <li class="exitText"><a href="logout.html">Logga ut</a></li>
+        </ul>
+      </div>
+    </nav>
     <div id="base" class="">
-
-      <!-- background (Group) -->
-      <div id="u1033" class="ax_default" data-label="background" data-width="1440" data-height="576">
-
-        <!-- Unnamed (Image) -->
-        <div id="u1034" class="ax_default image">
-          <img id="u1034_img" class="img " src="images/profilpage/u261.jpg"/>
-          <!-- Unnamed () -->
-          <div id="u1035" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-          </div>
-        </div>
-
-        <!-- bakgrund (Rectangle) -->
-        <div id="u1036" class="ax_default box_1" data-label="bakgrund">
-          <div id="u1036_div" class=""></div>
-          <!-- Unnamed () -->
-          <div id="u1037" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-          </div>
-        </div>
-      </div>
-
-      <!-- header (Group) -->
-      <div id="u1038" class="ax_default" data-label="header" data-width="1440" data-height="88">
-
-        <!-- headerLine (Horizontal Line) -->
-        <div id="u1039" class="ax_default line" data-label="headerLine">
-          <img id="u1039_img" class="img " src="images/profilpage/u296.png"/>
-          <!-- Unnamed () -->
-          <div id="u1040" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-          </div>
-        </div>
-
-        <!-- logga (Image) -->
-        <div id="u1041" class="ax_default image" data-label="logga">
-          <img id="u1041_img" class="img " src="images/klassrum/u3.png"/>
-          <!-- Unnamed () -->
-          <div id="u1042" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-          </div>
-        </div>
-
-        <!-- Profil (Rectangle) -->
-        <div id="u1043" class="ax_default heading_1" data-label="Profil">
-          <div id="u1043_div" class=""></div>
-          <!-- Unnamed () -->
-          <div id="u1044" class="text">
-            <p><span>Profil</span></p>
-          </div>
-        </div>
-
-        <!-- BokaStudie (Rectangle) -->
-        <div id="u1045" class="ax_default heading_1" data-label="BokaStudie">
-          <div id="u1045_div" class=""></div>
-          <!-- Unnamed () -->
-          <div id="u1046" class="text">
-            <p><span>Boka studiehjälp</span></p>
-          </div>
-        </div>
-
-        <!-- Klassrum (Rectangle) -->
-        <div id="u1047" class="ax_default heading_1" data-label="Klassrum">
-          <div id="u1047_div" class=""></div>
-          <!-- Unnamed () -->
-          <div id="u1048" class="text">
-            <p><span>Klassrum</span></p>
-          </div>
-        </div>
-
-        <!-- Quiz (Rectangle) -->
-        <div id="u1049" class="ax_default heading_1" data-label="Quiz">
-          <div id="u1049_div" class=""></div>
-          <!-- Unnamed () -->
-          <div id="u1050" class="text">
-            <p><span>Quiz</span></p>
-          </div>
-        </div>
-      </div>
 
       <!-- Unnamed (Group) -->
       <div id="u1051" class="ax_default" data-width="177" data-height="116">
@@ -317,99 +256,19 @@
       <div id="u1098" class="ax_default">
       </div>
 
-      <!-- footer (Group) -->
-      <div id="u1099" class="ax_default" data-label="footer" data-width="1440" data-height="97">
-
-        <!-- footerLine (Horizontal Line) -->
-        <div id="u1100" class="ax_default line" data-label="footerLine">
-          <img id="u1100_img" class="img " src="images/profilpage/footerline_u430.png"/>
-          <!-- Unnamed () -->
-          <div id="u1101" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-          </div>
-        </div>
-
-        <!-- footer (Rectangle) -->
-        <div id="u1102" class="ax_default box_1" data-label="footer">
-          <div id="u1102_div" class=""></div>
-          <!-- Unnamed () -->
-          <div id="u1103" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Shape) -->
-        <div id="u1104" class="ax_default icon">
-          <img id="u1104_img" class="img " src="images/profilpage/u434.png"/>
-          <!-- Unnamed () -->
-          <div id="u1105" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Shape) -->
-        <div id="u1106" class="ax_default icon">
-          <img id="u1106_img" class="img " src="images/profilpage/u436.png"/>
-          <!-- Unnamed () -->
-          <div id="u1107" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Shape) -->
-        <div id="u1108" class="ax_default icon">
-          <img id="u1108_img" class="img " src="images/profilpage/u438.png"/>
-          <!-- Unnamed () -->
-          <div id="u1109" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Shape) -->
-        <div id="u1110" class="ax_default icon">
-          <img id="u1110_img" class="img " src="images/profilpage/u440.png"/>
-          <!-- Unnamed () -->
-          <div id="u1111" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-          </div>
-        </div>
-
-        <!-- faq (Rectangle) -->
-        <div id="u1112" class="ax_default label" data-label="faq">
-          <div id="u1112_div" class=""></div>
-          <!-- Unnamed () -->
-          <div id="u1113" class="text">
-            <p><span>Frågor &amp; svar</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Shape) -->
-        <div id="u1114" class="ax_default icon">
-          <img id="u1114_img" class="img " src="images/profilpage/u442.png"/>
-          <!-- Unnamed () -->
-          <div id="u1115" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-          </div>
-        </div>
-
-        <!-- contact (Rectangle) -->
-        <div id="u1116" class="ax_default label" data-label="contact">
-          <div id="u1116_div" class=""></div>
-          <!-- Unnamed () -->
-          <div id="u1117" class="text">
-            <p><span>Kontakta oss</span></p>
-          </div>
-        </div>
-
-        <!-- social (Rectangle) -->
-        <div id="u1118" class="ax_default label" data-label="social">
-          <div id="u1118_div" class=""></div>
-          <!-- Unnamed () -->
-          <div id="u1119" class="text">
-            <p><span>Följ oss </span></p>
-          </div>
-        </div>
+    </div>
+    <footer class="footer theFooter">
+      <div class="container-fluid">
+      <div class="col-sm-4 setFooter">
+        <img src="img/faq.png"></img>
+      </div>
+      <div class="col-sm-4 setFooter">
+        <img src="img/contact.png"></img>
+      </div>
+      <div class="col-sm-4 setFooter">
+        <img src="img/follow.png"></img>
       </div>
     </div>
+    </footer>
   </body>
 </html>

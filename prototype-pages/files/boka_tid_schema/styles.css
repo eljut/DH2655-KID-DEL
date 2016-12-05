@@ -1,13 +1,13 @@
-﻿body {
-  margin:0px;
-  background-image:none;
-  position:static;
-  left:auto;
-  width:1435px;
-  margin-left:0;
-  margin-right:0;
-  text-align:left;
+﻿select {
+  background: white !important;
+  text-shadow:0 1px 0 rgba(0,0,0,0.4);
 }
+body {
+  height: 100%;
+  margin: 0px;
+  background-image: url('../../img/bg.jpg');
+  background-size: cover;
+}﻿
 #base {
   position:absolute;
   z-index:0;
