@@ -138,6 +138,10 @@
         <div class="col-sm-4" id="profileCircle">
           <img src="img/profileBg.png">
           <img src="img/p1.png" id="profileImg"></img>
+          <script>
+            if(localStorage.getItem("username")=="Louise") {  document.getElementById("profileImg").src = "images/profilpage/p0.png"; }
+            else if(localStorage.getItem("username")=="Martin") { document.getElementById("profileImg").src = "images/profilpage/p1.png";}
+          </script>
           </img>
           <div id="pokalContainer">
             <img src="img/pokal.png" id="pokalImg"></img>
