@@ -13,15 +13,25 @@ body{
   max-height: 100vh;
   background: transparent !important;
 }
-
+#profile{
+  position: absolute;
+  height: 140px;
+  border-radius: 70px;
+  top: 20px;
+  left: 30px;
+}
 .setVideo{
   position: relative;
   height: 200px;
 }
 
 #self-video{
-  top: 200px;
-  left: 200px;
+  position:absolute;
+  z-index: 999;
+  top: 130px;
+  left: 132px;
+  border-radius: 10px;
+  /*display: none;*/
 }
 
 /*.glyphicon {
@@ -101,14 +111,13 @@ body{
     position: absolute;
     top: 30px;/*31px;*/
     min-width: 100%;
-    background-color: white;
 }
 #pubnub-chat-input {
     width: 100%;
     margin: 0px 0px 20px 0px;
     outline: 0;
     border: 0px;
-    border-bottom: 2px solid #eee;
+    /*border-bottom: 2px solid #eee;*/
     font-size: 20px;
     font-weight: 100;
     font-family: "Helvetica Neue";
@@ -116,21 +125,22 @@ body{
 /* chat box output */
 #pubnub-chat-output {
     text-align: left;
-    overflow: scroll;
     overflow-x: hidden;
-    margin: 20px 0px 20px 0px;
+    margin: 0px;
+    top: 0px;
     height: 200px;
     font-size: 14px;
     font-weight: 200;
     font-family: "Helvetica Neue";
     outline: 0;
-    border-color: inherit;
+    /*border-color: inherit;*/
     -webkit-box-shadow: none;
     box-shadow: none;
+    color: white;
 }
 #pubnub-chat-output div {
     margin: 8px 10px;
-    border-bottom: 1px solid #f8f8f8;
+    /*border-bottom: 1px solid #f8f8f8;*/
 }
 
 
@@ -158,8 +168,8 @@ body{
   color: white;
   font-size: 12px;
   position: absolute;
-  min-width: 100px;
-  min-height: 50px;
+  min-width: 70px;
+  min-height: 20px;
   background: transparent;
 }
 #my-number-title {
@@ -227,12 +237,14 @@ body{
     right: 10px;
     display: block;
     background-color: green;
+    visibility: hidden;
 }
 #video-thumbnail img {
     width: 120px;
     height: 90px;
     border-radius: 6px;
     position: absolute;
+    visibility: hidden;
 }
 
 .dial-buttons .btn {
