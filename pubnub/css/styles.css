@@ -157,11 +157,9 @@ body{
 /* Video Display */
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 #video-border {
-  height: 200px;
-  padding: 0px;
-  margin: 0px;
+  padding: 10px;
+  margin: 20px 0px;
   overflow: hidden;
-  position: absolute;
 }
 #video-display {
   height: 340px;
