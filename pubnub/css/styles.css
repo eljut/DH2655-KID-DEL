@@ -25,8 +25,6 @@ body{
   border: none !important;
 }
 
-
-
 #videoBox,
 #chatBox,
 #mainContainer {
@@ -166,12 +164,11 @@ body{
   position: absolute;
 }
 #video-display {
-    height: 200px;
-    text-align: center;
-    color: #eee;
-    font-size: 150px;
-    line-height: 340px;
-    position: absolute;
+  height: 340px;
+  text-align: center;
+  color: #eee;
+  font-size: 150px;
+  line-height: 340px;
 }
 #video-self {
     height: 80px;
