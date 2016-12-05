@@ -186,7 +186,7 @@ body{
   /*position: absolute;*/
   width: 40px;
   left: 40px;
-  font-size: 12px;
+  font-size: 15px;
   color: white;
 }
 #my-number-section {
@@ -195,7 +195,7 @@ body{
   margin: 0px !important;
   padding: 0px;
   color: white;
-  font-size: 12px;
+  font-size: 15px;
   position: absolute;
   min-width: 70px;
   min-height: 20px;
@@ -317,7 +317,7 @@ body{
         position: absolute;
     }
     #my-number::before {
-        content: "Ditt nr: ";
+        content: "#: ";
         /*font-weight: 100;
         color: #878787;
         position: absolute;*/
