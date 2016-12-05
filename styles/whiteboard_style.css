@@ -83,7 +83,7 @@ body.alt2 {
 }
 
 .canvastools {
-	margin-top: 103px;
+	margin-top: 83px;
 	float: left;
 	position: absolute;
 }
@@ -98,7 +98,7 @@ body.alt2 {
 }
 
 #papertype {
-	margin-top: 100px;
+	margin-top: 84px;
 	text-align: right;
 	margin-right: -50px;
 }
@@ -320,7 +320,7 @@ body.alt2 {
 
 .popover {
 	width: 70px !important;
-	left: 6px !important;
+	left: 10px !important;
 }
 
 header {

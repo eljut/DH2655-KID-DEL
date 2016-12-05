@@ -19,16 +19,16 @@ html, body {
 }
 
 .logo {
-  margin-left: 15px;
-  height: 72px;
-  margin-top: 7px;
+  margin-left: 10px;
+  height: 52px;
+  margin-top: 6px;
   margin-bottom: 5px;
 }
 
 .nav {
   background-color: white !important;
-  height: 98px !important;
-  border-bottom: solid #22BD39 5pt;
+  height: 77px !important;
+  border-bottom: solid #41ad34 4pt;
 }
 
 .navbar-brand {
@@ -37,9 +37,9 @@ html, body {
 
 .navbar-buttons {
   margin-top: 20px;
-  font-family: 'Dosis Bold', 'Dosis';
+  font-family: "Helvetica Neue","Helvetica","Arial","sans-serif";
   font-style: normal;
-  font-size: 28px;
+  font-size: 20px;
 }
 
 .navbutton {
