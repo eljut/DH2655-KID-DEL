@@ -23,14 +23,27 @@ video {
   height: 200px;
 }
 
-.glyphicon,
-.glyphicon-flash,
-.glyphicon-facetime-video {
-  position: absolute;
-  top: 0px;
-  left: 15px;
-  padding: 10px;
+.glyphicon {
+  position: absolute !important;
+  top: 0px !important;
+  left: 15px !important;
+  padding: 10px !important;
 }
+
+.glyphicon-flash {
+  position: absolute !important;
+  top: 0px !important;
+  left: 15px !important;
+  padding: 10px !important;
+}
+
+.glyphicon-facetime-video {
+  position: absolute !important;
+  top: 0px !important;
+  left: 15px !important;
+  padding: 10px !important;
+}
+
 #setBack{
   background: transparent !important;
   padding: 10px;
