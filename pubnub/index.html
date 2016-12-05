@@ -201,6 +201,8 @@ var phone     = window.phone = PHONE({
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 function connected(session) {
     video_out.innerHTML = '';
+    session.video.height = '150px';
+
     video_out.appendChild(session.video);
 
     PUBNUB.$('number').value = ''+session.number;
