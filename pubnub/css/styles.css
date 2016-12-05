@@ -206,8 +206,8 @@ video {
   height: 100px;
   text-align: center;
   color: #eee;
-  font-size: 150px;
-  line-height: 340px;
+  /*font-size: 150px;
+  line-height: 340px;*/
 }
 #video-self {
     height: 80px;
@@ -222,8 +222,8 @@ video {
 #video-display video,
 #video-self img {
     border-radius: 6px;
-    height: 300px;
-    position: absolute;
+    height: 100px;
+    position: relative;
 }
 #video-thumbnail {
     position: absolute;
