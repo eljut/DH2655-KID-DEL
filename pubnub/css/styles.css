@@ -192,9 +192,10 @@ body{
 }
 #video-thumbnail {
     position: absolute;
-    top: -180px;
+    top: 0px;
     right: 10px;
-    position: absolute;
+    display: block;
+    background-color: green;
 }
 #video-thumbnail img {
     width: 120px;
