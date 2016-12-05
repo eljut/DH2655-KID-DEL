@@ -175,6 +175,7 @@ body{
 #my-number-section {
   top: 0px;
   left: 0px;
+  margin: 0px;
   padding: 0px;
   color: white;
   font-size: 12px;
