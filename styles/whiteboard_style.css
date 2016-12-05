@@ -52,7 +52,6 @@ body.alt2 {
 }
 
 
-
 .grid {
 	background: url(http://wphooper.com/svg/examples/grid_pattern.png) left top repeat;
 }
@@ -492,5 +491,8 @@ header div {
 	}
 	.github {
 		display: block;
+	}
+	li {
+    display: inline;
 	}
 }
