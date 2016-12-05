@@ -194,8 +194,8 @@ body{
 /* Video Display */
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 #video-border {
-  padding: 10px;
-  margin: 20px 0px;
+  padding: 0px;
+  margin: 0px;
   overflow: hidden;
 }
 #video-display {
