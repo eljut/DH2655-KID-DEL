@@ -290,12 +290,12 @@ body{
         position: absolute;
     }
     #my-number {
-        font-size: 12px;
+        font-size: 10px;
         width: 60px;
         left: 5px;
         top: 0px !important;
         /*line-height: 44px;*/
-        font-weight: normal;
+        /*font-weight: normal;*/
         position: absolute;
     }
     #my-number::before {
