@@ -277,7 +277,7 @@
 #setIcons{
   height: 50px !important;
   width: 200px;
-  top: 230px;
+  top: 240px;
   left: 45px;/*37px;*/
   position: absolute;
 }
@@ -297,7 +297,7 @@
         left: 0px;
     }
     #my-number {
-        font-size: 5px !important;
+        font-size: 12px !important;
         width: 60px;
         left: 0px !important;
         top: 0px !important;
@@ -306,7 +306,7 @@
         position: absolute;
     }
     #my-number::before {
-        content: "Ditt nr: ";
+        content: "";
         /*font-weight: 100;
         color: #878787;
         position: absolute;*/
