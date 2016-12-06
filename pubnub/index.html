@@ -80,7 +80,13 @@
                   <option value="1">1. Lennart Samuelsson</option>
                   <option value="2">2. Daniel Gustavsson</option>
                   <option value="3">3. Sanna Högman</option>
-                  <option value="4">4. Nivin Fakih</option>
+                  <option value="4">4. Johanna fält</option>
+                  <option value="5">5. Michelle Gustafsson</option>
+                  <option value="6">6. Joel Duva</option>
+                  <option value="7">7. Martin Friman</option>
+                  <option value="8">8. Jenny Karlsson</option>
+                  <option value="9">9. Karin Lind</option>
+                  <option value="10">10. Josefine Erhström</option>
                 </select>
               <input id="number" class="form-control" type="number" name="setNum" placeholder="Type Recipient's #">
               </div>
@@ -177,7 +183,7 @@ var urlargs         = urlparams();
 var my_number       = PUBNUB.$('my-number');
 var my_link         = PUBNUB.$('my-number-link');
 // var number          = urlargs.number || Math.floor(Math.random()*999+1);
-var number          = urlargs.number || Math.floor(Math.random()*4+1);
+var number          = urlargs.number || Math.floor(Math.random()*10+1);
 
 my_number.number    = number;
 my_number.innerHTML = ''+my_number.number;
