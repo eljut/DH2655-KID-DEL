@@ -1,9 +1,10 @@
+/*VErsion 1.0*/
 #videoChat{
 	position: absolute;
 	top: 77px;
 	right: 0px;
 	overflow: hidden;
-	height: 590px;
+	height: : 610px;
 	max-width: 210px;
 	border: 0px;
 	margin: 0px !important;
